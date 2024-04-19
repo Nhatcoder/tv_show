@@ -15,6 +15,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- link css -->
     <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+    <link rel="shortcut icon" href="{{ asset('imgages/logo.png') }}" type="image/x-icon">
 
 </head>
 

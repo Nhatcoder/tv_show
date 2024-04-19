@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 18, 2024 at 09:48 AM
+-- Generation Time: Apr 19, 2024 at 04:01 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `phimhay_nguoncc`
+-- Database: `tv_show`
 --
 
 -- --------------------------------------------------------
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `category` (
   `id_category` int NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `status` int NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -52,8 +52,8 @@ INSERT INTO `category` (`id_category`, `name`, `slug`, `status`) VALUES
 
 CREATE TABLE `country` (
   `id` int NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `status` int NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -78,7 +78,7 @@ CREATE TABLE `episode` (
   `id` int NOT NULL,
   `id_movie` int NOT NULL,
   `link_movie` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
-  `episode` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
+  `episode` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -1759,7 +1759,263 @@ INSERT INTO `episode` (`id`, `id_movie`, `link_movie`, `episode`) VALUES
 (4951, 239, 'https://embed.streamc.xyz/embed.php?hash=d1574baa4f1c5925fc5967142c67083c', '34'),
 (4952, 239, 'https://embed.streamc.xyz/embed.php?hash=4579a4ca7f0094f07f65cc2d84e1a560', '35'),
 (4953, 239, 'https://embed.streamc.xyz/embed.php?hash=4d63aaf933871dd787070b8d83588b40', '36'),
-(4954, 301, 'https://embed.streamc.xyz/embed.php?hash=dd50a73cf0325a86eb87ec8af1252d0a', 'Full');
+(4954, 301, 'https://embed.streamc.xyz/embed.php?hash=dd50a73cf0325a86eb87ec8af1252d0a', 'Full'),
+(4955, 302, 'https://embed.streamc.xyz/embed.php?hash=4d043d17e5ab2dc3d4b078c60a0412dd', 'Full'),
+(4956, 303, 'https://embed1.streamc.xyz/embed.php?hash=06ee4c0b49984f35938db660c1c3f2db', '1'),
+(4957, 303, 'https://embed1.streamc.xyz/embed.php?hash=95f242264de5d7d3ead0a3624ac7f03a', '2'),
+(4958, 303, 'https://embed1.streamc.xyz/embed.php?hash=d5691f5c3945a9fa578c3bcf34a672ec', '3'),
+(4959, 304, 'https://embed.streamc.xyz/embed.php?hash=a9cbcbf9a55d75eb15e099c2864f8d59', 'FULL'),
+(4960, 305, 'https://embed.streamc.xyz/embed.php?hash=f1fe023928722a2bf57c1c5153b90234', 'FULL'),
+(4961, 306, 'https://embed.streamc.xyz/embed.php?hash=1e176577390ca1b071aede41067f1bce', 'FULL'),
+(4962, 307, 'https://embed.streamc.xyz/embed.php?hash=e7710bdfbf410616ddf509dfda764bbd', 'FULL'),
+(4963, 308, 'https://embed.streamc.xyz/embed.php?hash=8368b7af531621fd3b710e316763d32a', 'FULL'),
+(4964, 309, 'https://embed.streamc.xyz/embed.php?hash=f246ef26a78fae7b35ff42ec6469bcda', 'Full'),
+(4965, 310, 'https://embed1.streamc.xyz/embed.php?hash=056b64c4e6f63aded8d15961bef2bbe8', '1'),
+(4966, 310, 'https://embed1.streamc.xyz/embed.php?hash=300a18305eb811e74fd753fb9b510adb', '2'),
+(4967, 310, 'https://embed1.streamc.xyz/embed.php?hash=132fd61be90b176d66be57c5f83b796d', '3'),
+(4968, 310, 'https://embed1.streamc.xyz/embed.php?hash=f11f1a679c3ad24036de8dced393e0b1', '4'),
+(4969, 310, 'https://embed1.streamc.xyz/embed.php?hash=99ee777b8ef1ad14e137e64f7ca4171e', '5'),
+(4970, 310, 'https://embed1.streamc.xyz/embed.php?hash=44ed6bd79a2e87745924fdfd15bbe4d1', '6'),
+(4971, 310, 'https://embed1.streamc.xyz/embed.php?hash=e4ad355c68e66d503c5bdf2d50d6ee69', '7'),
+(4972, 310, 'https://embed1.streamc.xyz/embed.php?hash=4bba2c812fb8bfaea38b48b4ee881ca7', '8'),
+(4973, 310, 'https://embed1.streamc.xyz/embed.php?hash=433c8c0e81e76e50d466f0fcc843044f', '9'),
+(4974, 310, 'https://embed1.streamc.xyz/embed.php?hash=82fc7ffdaf725c5cf42a505f86210642', '10'),
+(4975, 310, 'https://embed1.streamc.xyz/embed.php?hash=4b83f85b34a1b95188f455eb1f9f5e5f', '11'),
+(4976, 311, 'https://embed1.streamc.xyz/embed.php?hash=6ce1b5426a4079bb3058b13d39bc75f2', '1'),
+(4977, 311, 'https://embed1.streamc.xyz/embed.php?hash=7b0fa29c02c454555e17727c333f3611', '2'),
+(4978, 311, 'https://embed1.streamc.xyz/embed.php?hash=50d5a81e32e0c3ed657ffecead9ea5f6', '3'),
+(4979, 312, 'https://embed1.streamc.xyz/embed.php?hash=5df0c74337e9153396d8edfdd7077af0', '1'),
+(4980, 312, 'https://embed1.streamc.xyz/embed.php?hash=b91445b3d0a9fac19a2046a6f31cd949', '2'),
+(4981, 312, 'https://embed1.streamc.xyz/embed.php?hash=69c959c27b1b6de7b1fd2a0d1ba50c73', '3'),
+(4982, 312, 'https://embed1.streamc.xyz/embed.php?hash=6546daa214b9563a59f8d77fc85b2954', '4'),
+(4983, 312, 'https://embed1.streamc.xyz/embed.php?hash=549ffecc6a45bd9f4e7fbcc457b70853', '5'),
+(4984, 312, 'https://embed1.streamc.xyz/embed.php?hash=8f343ddf6febcff8051d2214c3182317', '6'),
+(4985, 312, 'https://embed1.streamc.xyz/embed.php?hash=2be30d4ed7ce0cc54d734dd30c9c1539', '7'),
+(4986, 312, 'https://embed1.streamc.xyz/embed.php?hash=acd5e921e8b80b79023b062bf6ae5010', '8'),
+(4987, 312, 'https://embed1.streamc.xyz/embed.php?hash=5fff9c28d108bd6820665a171636b892', '9'),
+(4988, 312, 'https://embed1.streamc.xyz/embed.php?hash=595746eee1708d98e0035580e06fc5f8', '10'),
+(4989, 312, 'https://embed1.streamc.xyz/embed.php?hash=3f43002b8e6e5d8e41274880e8f09d5f', '11'),
+(4990, 312, 'https://embed1.streamc.xyz/embed.php?hash=c1840cc95fa06b1547a9c377d49997b3', '12'),
+(4991, 312, 'https://embed1.streamc.xyz/embed.php?hash=b4f25432430623d0ee1d71e48837b458', '13'),
+(4992, 312, 'https://embed1.streamc.xyz/embed.php?hash=29eea20a245f2587254cec92d38f3658', '14'),
+(4993, 312, 'https://embed1.streamc.xyz/embed.php?hash=3ff33bb7a05aae653b7f8e94573283e3', '15'),
+(4994, 312, 'https://embed1.streamc.xyz/embed.php?hash=924dffc79c1253c24e0c24f91b4869a3', '16'),
+(4995, 313, 'https://embed1.streamc.xyz/embed.php?hash=41cf8f6d0aeba945c02ebb134fbeb681', '1'),
+(4996, 313, 'https://embed1.streamc.xyz/embed.php?hash=a0bf73af835a6cfd5cf03e9cddfef2a3', '2'),
+(4997, 313, 'https://embed1.streamc.xyz/embed.php?hash=1406744ad3984b035111432aa7728d8b', '3'),
+(4998, 313, 'https://embed1.streamc.xyz/embed.php?hash=1e1d5a8ed78630dba0650465f5f2ae2a', '4'),
+(4999, 313, 'https://embed1.streamc.xyz/embed.php?hash=d080413182430b7f8e3b1384e4e1bc59', '5'),
+(5000, 313, 'https://embed1.streamc.xyz/embed.php?hash=f5aa63d03588091bc8e8c9f88ab3ae03', '6'),
+(5001, 313, 'https://embed1.streamc.xyz/embed.php?hash=5b476e24137ae5d8d409e93645f622e3', '7'),
+(5002, 313, 'https://embed1.streamc.xyz/embed.php?hash=7e2264a4d2b7cb1cd92f413641c96c67', '8'),
+(5003, 313, 'https://embed1.streamc.xyz/embed.php?hash=c0a32daf15733a476449c99409831ace', '9'),
+(5004, 313, 'https://embed1.streamc.xyz/embed.php?hash=97a2fc6f8956a54ee6519bb66919de4f', '10'),
+(5005, 313, 'https://embed1.streamc.xyz/embed.php?hash=8a532652cffb7475ae1be817a759841c', '11'),
+(5006, 313, 'https://embed1.streamc.xyz/embed.php?hash=c699d5a9936d745c9b68aaeffe167d80', '12'),
+(5007, 314, 'https://embed.streamc.xyz/embed.php?hash=e42a1b3e443d3b076b01c9867fd15b0c', '1'),
+(5008, 314, 'https://embed.streamc.xyz/embed.php?hash=a60be9d8cd368c1bc0a57dd6ab4a6244', '2'),
+(5009, 314, 'https://embed.streamc.xyz/embed.php?hash=4fc7dbc8a06e87fca07eb972de7c9b93', '3'),
+(5010, 314, 'https://embed.streamc.xyz/embed.php?hash=f2aa7538a47dec42690c310a641dfcca', '4'),
+(5011, 314, 'https://embed.streamc.xyz/embed.php?hash=6c0495d83b0e3e4c6dfeb72326115106', '5'),
+(5012, 314, 'https://embed.streamc.xyz/embed.php?hash=256c622afbab1ffc84785e3b9e95d5c2', '6'),
+(5013, 314, 'https://embed.streamc.xyz/embed.php?hash=886167dd84aa65166e7fee080c859e8b', '7'),
+(5014, 314, 'https://embed.streamc.xyz/embed.php?hash=bcc22df5b44e32f6ce6d7ae3b76a1f02', '8'),
+(5015, 314, 'https://embed.streamc.xyz/embed.php?hash=4962e2b5fd81306015853e45efc47d30', '9'),
+(5016, 314, 'https://embed.streamc.xyz/embed.php?hash=638d583172e00c76aa359250f2c2d8a4', '10'),
+(5017, 314, 'https://embed.streamc.xyz/embed.php?hash=e6778212dc941d9cc6544bfb68b040e2', '11'),
+(5018, 314, 'https://embed.streamc.xyz/embed.php?hash=103274489ebc882d7731cbd5f9c7c626', '12'),
+(5019, 314, 'https://embed.streamc.xyz/embed.php?hash=39a4794063c2d63e47f87be56e14f9cc', '13'),
+(5020, 314, 'https://embed.streamc.xyz/embed.php?hash=c0e4ca92f85704e9a91559602395eda2', '14'),
+(5021, 314, 'https://embed.streamc.xyz/embed.php?hash=1ec28bc9ab14cd95b8571c05f3544e4e', '15'),
+(5022, 314, 'https://embed.streamc.xyz/embed.php?hash=40450d1511cb602a128c2a2c9f478219', '16'),
+(5023, 315, 'https://embed.streamc.xyz/embed.php?hash=0a6829d48253adba51339cfce558aa8c', '1A'),
+(5024, 315, 'https://embed.streamc.xyz/embed.php?hash=960275c20d813e038d43a24c15e4d51b', '1B'),
+(5025, 315, 'https://embed.streamc.xyz/embed.php?hash=9ccc4ee1d86c94410357c47b4c27fd17', '2A'),
+(5026, 315, 'https://embed.streamc.xyz/embed.php?hash=59fa5db5f6a222d65671bc125003c677', '2B'),
+(5027, 315, 'https://embed.streamc.xyz/embed.php?hash=2d40722448f88e0df30904513e7ab009', '3A'),
+(5028, 315, 'https://embed.streamc.xyz/embed.php?hash=e315500e3f3224df2a733e89abb4e347', '3B'),
+(5029, 315, 'https://embed.streamc.xyz/embed.php?hash=65edc6fa1f2b0992e75334b7c99514c3', '4A'),
+(5030, 315, 'https://embed.streamc.xyz/embed.php?hash=1572d24376ab16b7aa38b29c99ece133', '4B'),
+(5031, 315, 'https://embed.streamc.xyz/embed.php?hash=d2dbc7b287fcd8d36a0d55b6398ef787', '5A'),
+(5032, 315, 'https://embed.streamc.xyz/embed.php?hash=b754ae56e9f9c7eb336bf95cd4f04103', '5B'),
+(5033, 316, 'https://embed.streamc.xyz/embed.php?hash=05de2d0564ed7db3b6ed32ec291764d0', '1'),
+(5034, 316, 'https://embed.streamc.xyz/embed.php?hash=f054716509f268ee610a0856c7172de8', '2'),
+(5035, 316, 'https://embed.streamc.xyz/embed.php?hash=e3b7a5128dbd3d72ae7db75f8351f20c', '3'),
+(5036, 316, 'https://embed.streamc.xyz/embed.php?hash=ea1f5a4813ea6abf570d670f647f2b3e', '4'),
+(5037, 316, 'https://embed.streamc.xyz/embed.php?hash=420d7719f4f5ae6a3d6af4faa2b30fce', '5'),
+(5038, 316, 'https://embed.streamc.xyz/embed.php?hash=f35080a0b3d0283f05475d3c9a897f89', '6'),
+(5039, 316, 'https://embed.streamc.xyz/embed.php?hash=9be282cae3ab5ebf2f7efef992217ce7', '7'),
+(5040, 316, 'https://embed.streamc.xyz/embed.php?hash=0e4c0756d50a58a8bfd68c748de187fe', '8'),
+(5041, 316, 'https://embed.streamc.xyz/embed.php?hash=14fcb25670df61278c77239f8f74123c', '9'),
+(5042, 316, 'https://embed.streamc.xyz/embed.php?hash=c2e785b760e414d9239a92e7143a7b29', '10'),
+(5043, 316, 'https://embed.streamc.xyz/embed.php?hash=0de2cef481028a63346cf04c8597e3eb', '11'),
+(5044, 316, 'https://embed.streamc.xyz/embed.php?hash=1f704a67a09e5591a816bffbc2ca4d92', '12'),
+(5045, 317, 'https://embed.streamc.xyz/embed.php?hash=17acb77933ef8624ac14771fb6ded4f6', '1'),
+(5046, 317, 'https://embed.streamc.xyz/embed.php?hash=59ddb4096365ebf75cd82c3ae470dbe4', '2'),
+(5047, 317, 'https://embed.streamc.xyz/embed.php?hash=e8ae91e5fcc96216cbada6ebb62ab936', '3'),
+(5048, 318, 'https://embed.streamc.xyz/embed.php?hash=cfcf127efb2b264ca70a7e6999868eb7', '1'),
+(5049, 318, 'https://embed.streamc.xyz/embed.php?hash=920400ea72c982772c3675ea9f8382b8', '2'),
+(5050, 318, 'https://embed.streamc.xyz/embed.php?hash=2c4f79b0223fbb576a5dde6d192fa46a', '3'),
+(5051, 318, 'https://embed.streamc.xyz/embed.php?hash=05cee2eff8c256667f27576b3c749fe1', '4'),
+(5052, 318, 'https://embed.streamc.xyz/embed.php?hash=a6893ce9b00d7c0b01a52ebf0563dcf4', '5'),
+(5053, 318, 'https://embed.streamc.xyz/embed.php?hash=0bbc51d27c95d3338ff93a29373e1ea1', '6'),
+(5054, 318, 'https://embed.streamc.xyz/embed.php?hash=a790298fb119ada63c496eb0f048af5f', '7'),
+(5055, 318, 'https://embed.streamc.xyz/embed.php?hash=f677bb55a9dcc317f16a9e8da59cc364', '8'),
+(5056, 318, 'https://embed.streamc.xyz/embed.php?hash=7c1c767edab6e6b361cf734f828bc75e', '9'),
+(5057, 318, 'https://embed.streamc.xyz/embed.php?hash=7334cb49d4db0e822b5046204001aef5', '10'),
+(5058, 318, 'https://embed.streamc.xyz/embed.php?hash=b18dab07c66eb34efd77b2b77c66dc4a', '11'),
+(5059, 318, 'https://embed.streamc.xyz/embed.php?hash=eaa6aeeed2aedd18922bd4663f6e8cd0', '12'),
+(5060, 318, 'https://embed.streamc.xyz/embed.php?hash=50e7252fa1395c10f70a39ba1b07f1f7', '13'),
+(5061, 318, 'https://embed.streamc.xyz/embed.php?hash=391c6e868309de9c2612b5d33e69ea12', '14'),
+(5062, 318, 'https://embed.streamc.xyz/embed.php?hash=52ca90110d83a9f29f5b9ab821ecf81a', '15'),
+(5063, 318, 'https://embed.streamc.xyz/embed.php?hash=0de412dc3a19c1adb58870a61baaded7', '16'),
+(5064, 318, 'https://embed.streamc.xyz/embed.php?hash=4daa560bafb59bc79f424b1068c05194', '17'),
+(5065, 318, 'https://embed.streamc.xyz/embed.php?hash=0c3db989bd2302dbda3df7a010b1cf56', '18'),
+(5066, 318, 'https://embed.streamc.xyz/embed.php?hash=b712e2bb156879f85c53163bbf1a022f', '19'),
+(5067, 318, 'https://embed.streamc.xyz/embed.php?hash=200f1826f916e8f5ac2c39660cd242bd', '20'),
+(5068, 318, 'https://embed.streamc.xyz/embed.php?hash=c0d1c668710190a723b6cca7db9d9672', '21'),
+(5069, 318, 'https://embed.streamc.xyz/embed.php?hash=21b955d2db885df262cf35eaf47e8064', '22'),
+(5070, 318, 'https://embed.streamc.xyz/embed.php?hash=b3ec151c987a3deb42d1576d3f6b75e3', '23'),
+(5071, 318, 'https://embed.streamc.xyz/embed.php?hash=16f4db4870fe3d536cba9fbaa8d29fe8', '24'),
+(5072, 318, 'https://embed.streamc.xyz/embed.php?hash=87a246f68337ffaac7c9b3047fb04663', '25'),
+(5073, 318, 'https://embed.streamc.xyz/embed.php?hash=402dedc9281bcd78d02279e75a823503', '26'),
+(5074, 319, 'https://embed.streamc.xyz/embed.php?hash=366a22f3acc931063159fac69234b642', 'Full'),
+(5075, 319, 'https://embed.streamc.xyz/embed.php?hash=8ee3977da41cd9650cac1a57ff86c0dd', 'Full'),
+(5076, 320, 'https://embed.streamc.xyz/embed.php?hash=77096da2af41cb2454faaff01e7c5bea', 'FULL'),
+(5077, 321, 'https://embed.streamc.xyz/embed.php?hash=34666af8de916239133b47f3afa7a33e', 'Full'),
+(5078, 322, 'https://embed.streamc.xyz/embed.php?hash=6306080c493aec58701a6d736340cde4', 'FULL'),
+(5079, 323, 'https://embed.streamc.xyz/embed.php?hash=895698669f82d2df3af046357eb652f7', 'Full'),
+(5080, 324, 'https://embed.streamc.xyz/embed.php?hash=da2630b0edaf0db11122486a4590fb51', 'FULL'),
+(5081, 325, 'https://embed1.streamc.xyz/embed.php?hash=33ec35b6210e8879aadf08fd75306be7', '1'),
+(5082, 325, 'https://embed1.streamc.xyz/embed.php?hash=38f1a6f96da56b639bcc15cdd95c46d4', '2'),
+(5083, 325, 'https://embed1.streamc.xyz/embed.php?hash=15ca37f652497035e935b2cb2d7adf7d', '3'),
+(5084, 326, 'https://embed1.streamc.xyz/embed.php?hash=bcd8e73c04ee9321fa285bb05e0dcd05', '1'),
+(5085, 326, 'https://embed1.streamc.xyz/embed.php?hash=6c8cb697c7ee8568ea77d78d2d267d29', '2'),
+(5086, 327, 'https://embed1.streamc.xyz/embed.php?hash=14ae6542fa5a96bf439c5087685ace4b', '1'),
+(5087, 327, 'https://embed1.streamc.xyz/embed.php?hash=f6c9321fd41cc92827c94d1f22cd0a97', '2'),
+(5088, 328, 'https://embed.streamc.xyz/embed.php?hash=7c8f047e55beb4f6c74a10679d3f4bac', '1A'),
+(5089, 328, 'https://embed.streamc.xyz/embed.php?hash=7be0278dc2a868519476806eccfa7a67', '1B'),
+(5090, 328, 'https://embed.streamc.xyz/embed.php?hash=d4d6e1a202489b97349d9420a4e365de', '2A'),
+(5091, 328, 'https://embed.streamc.xyz/embed.php?hash=1390f922b234a71bdc153e92b46be4eb', '2B'),
+(5092, 328, 'https://embed.streamc.xyz/embed.php?hash=1ae2d6c164b8f2bdf14de8f40bf52efa', '3A'),
+(5093, 328, 'https://embed.streamc.xyz/embed.php?hash=ceb516cd3637466b51069395129aa503', '3B'),
+(5094, 328, 'https://embed.streamc.xyz/embed.php?hash=7978e986bca2c338b71409f3c90ed046', '4A'),
+(5095, 328, 'https://embed.streamc.xyz/embed.php?hash=a29b43218b04ca85574c415801451a28', '4B'),
+(5096, 328, 'https://embed.streamc.xyz/embed.php?hash=b02d6e27e32910a9a0401700edee9da5', '5A'),
+(5097, 328, 'https://embed.streamc.xyz/embed.php?hash=ced853d488c16b2fa38d23a9ac52f00c', '5B'),
+(5098, 328, 'https://embed.streamc.xyz/embed.php?hash=e4ebf445349a4d3de1743b083901b4b6', '6A'),
+(5099, 328, 'https://embed.streamc.xyz/embed.php?hash=6b4942733c001bec3d0a878e413b25af', '6B'),
+(5100, 328, 'https://embed.streamc.xyz/embed.php?hash=16f1e16e9c39433b39ac53432367b323', '7A'),
+(5101, 328, 'https://embed.streamc.xyz/embed.php?hash=062e2e42bd1d85de5ba9c953fb67006f', '7B'),
+(5102, 328, 'https://embed.streamc.xyz/embed.php?hash=c9524f101a7d8741762ba4cdde49752e', '8A'),
+(5103, 328, 'https://embed.streamc.xyz/embed.php?hash=5d47dcee2f0e12308053c2d627ad888f', '8B'),
+(5104, 328, 'https://embed.streamc.xyz/embed.php?hash=f3a05d30d533dbcf69fb095080747f6e', '9A'),
+(5105, 328, 'https://embed.streamc.xyz/embed.php?hash=90ddb5c3807050a0c026d9105f8f1e73', '9B'),
+(5106, 328, 'https://embed.streamc.xyz/embed.php?hash=0997eef56b9d0211f4942c3f8784ef4b', '10A'),
+(5107, 328, 'https://embed.streamc.xyz/embed.php?hash=5c75895fc3e9c6f5d6da12b23d49b131', '10B'),
+(5108, 328, 'https://embed.streamc.xyz/embed.php?hash=9a79b326fdfe26c279e7df889f51857c', '11A'),
+(5109, 328, 'https://embed.streamc.xyz/embed.php?hash=f1188c95a558a8b943f5626728412f5c', '11B'),
+(5110, 328, 'https://embed.streamc.xyz/embed.php?hash=c8e36f9d017f2cc75a3a66638fa2adc3', '12A'),
+(5111, 328, 'https://embed.streamc.xyz/embed.php?hash=8ea1b7f7fc1b4b277bdd8267f2a7aa30', '12B'),
+(5112, 328, 'https://embed.streamc.xyz/embed.php?hash=1deaf0e3fdb29acd2328c61e87367083', '13A'),
+(5113, 328, 'https://embed.streamc.xyz/embed.php?hash=187bb14a7721ed90a92e5eb89710d085', '13B'),
+(5114, 328, 'https://embed.streamc.xyz/embed.php?hash=50a4dd8921917d887ca83fd75a125395', '14A'),
+(5115, 328, 'https://embed.streamc.xyz/embed.php?hash=fd96a254b6cc05fd2f3b07b83bf6b412', '14B'),
+(5116, 328, 'https://embed.streamc.xyz/embed.php?hash=c45c8b13eb46879f296e450539b5d903', '15A'),
+(5117, 328, 'https://embed.streamc.xyz/embed.php?hash=671e2497008666561773a03947225dcb', '15B'),
+(5118, 328, 'https://embed.streamc.xyz/embed.php?hash=e06a2c67cddf49c2e1ad7390e8d00e3b', '16A'),
+(5119, 328, 'https://embed.streamc.xyz/embed.php?hash=603b9a4252841e654daa362bd43238b0', '16B'),
+(5120, 328, 'https://embed.streamc.xyz/embed.php?hash=b0a9d859a3c86c5ae69347fc90c9fa39', '17A'),
+(5121, 328, 'https://embed.streamc.xyz/embed.php?hash=8af8f0bcc90e01f2cd376cff512dbc7c', '17B'),
+(5122, 328, 'https://embed.streamc.xyz/embed.php?hash=f50160062afd76b84c184402bc61c9e9', '18A'),
+(5123, 328, 'https://embed.streamc.xyz/embed.php?hash=2ccb033892c0ea5d9a791dd12809a425', '18B'),
+(5124, 328, 'https://embed.streamc.xyz/embed.php?hash=567deb8de635f47f433e3d10a834ec05', '19A'),
+(5125, 328, 'https://embed.streamc.xyz/embed.php?hash=cd16850f554ee9d25b39647782e4356c', '19B'),
+(5126, 328, 'https://embed.streamc.xyz/embed.php?hash=bb2bf5d9d9bba0d551471e5e467719ae', '20A'),
+(5127, 328, 'https://embed.streamc.xyz/embed.php?hash=daf61168dc1fc2b4dd70493730aa8cb5', '20B'),
+(5128, 329, 'https://embed.streamc.xyz/embed.php?hash=c50201f380ede5ce284b0bd0256deb4f', '1'),
+(5129, 329, 'https://embed.streamc.xyz/embed.php?hash=bee1e2c6ab59a11086963afda55b26bf', '2'),
+(5130, 329, 'https://embed.streamc.xyz/embed.php?hash=a3e94b06be76d7404b72fc1e72dd84ea', '3'),
+(5131, 329, 'https://embed.streamc.xyz/embed.php?hash=d1ab16a3b65a17d137d68021fa8742ae', '4'),
+(5132, 329, 'https://embed.streamc.xyz/embed.php?hash=b00851b3539f1f777eb7d5fc6ea6f591', '5'),
+(5133, 329, 'https://embed.streamc.xyz/embed.php?hash=02a4c8cea9e72e3bf4db67522413a813', '6'),
+(5134, 329, 'https://embed.streamc.xyz/embed.php?hash=2be43f1339a779f58ba8e348f60f8971', '7'),
+(5135, 329, 'https://embed.streamc.xyz/embed.php?hash=53091d5493d1b046e7a98cbf826cb815', '8'),
+(5136, 329, 'https://embed.streamc.xyz/embed.php?hash=26eff17bbfd4ee249185c41db9c59d77', '9'),
+(5137, 329, 'https://embed.streamc.xyz/embed.php?hash=2a310f8325e9c79e1eca056581a1c233', '10'),
+(5138, 329, 'https://embed.streamc.xyz/embed.php?hash=581a59e4180d952c5c98e3473adfeb53', '11'),
+(5139, 329, 'https://embed.streamc.xyz/embed.php?hash=9bbf8afed3c7c86c44ee4c1e26f0189d', '12'),
+(5140, 329, 'https://embed.streamc.xyz/embed.php?hash=78f39f0b7713b6f3faee855e4095ab26', '13'),
+(5141, 329, 'https://embed.streamc.xyz/embed.php?hash=d2272a0ff55c22e781bcdb51cbde7d6f', '14'),
+(5142, 329, 'https://embed.streamc.xyz/embed.php?hash=eb6633a7e81a51b1fd851446ac8038f2', '15'),
+(5143, 329, 'https://embed.streamc.xyz/embed.php?hash=fb43be349e351a8d806f3f2ae7ae9a6c', '16'),
+(5144, 329, 'https://embed.streamc.xyz/embed.php?hash=f9284f75c43c56e3cb5e4da2ce9f50bc', '17'),
+(5145, 329, 'https://embed.streamc.xyz/embed.php?hash=85840705ba07cea03b46e53c8c38f9f3', '18'),
+(5146, 329, 'https://embed.streamc.xyz/embed.php?hash=872eff3e46466fd09a7aa4a1932b109c', '19'),
+(5147, 329, 'https://embed.streamc.xyz/embed.php?hash=a1b25697d7cd44082821d98876683496', '20'),
+(5148, 329, 'https://embed.streamc.xyz/embed.php?hash=e8d48b655164320b1464250c5349c0ec', '21'),
+(5149, 329, 'https://embed.streamc.xyz/embed.php?hash=0b2c161f7253f6517695639df8c046a0', '22'),
+(5150, 329, 'https://embed.streamc.xyz/embed.php?hash=16e2191ab92e84404ced6579f5487c83', '1'),
+(5151, 329, 'https://embed.streamc.xyz/embed.php?hash=57ef5592466e1041f08a744fee6a8d59', '2'),
+(5152, 329, 'https://embed.streamc.xyz/embed.php?hash=004576ef204bd2a889d399eafedfadfd', '3'),
+(5153, 329, 'https://embed.streamc.xyz/embed.php?hash=1b2a6d1647a5c12f862a9c76f60b884c', '4'),
+(5154, 329, 'https://embed.streamc.xyz/embed.php?hash=da371535ebe73665cfc596fb42cc12f8', '5'),
+(5155, 329, 'https://embed.streamc.xyz/embed.php?hash=ae50f98ff8478d9b745e958fa0c3cb67', '6'),
+(5156, 329, 'https://embed.streamc.xyz/embed.php?hash=bd7709b36f63b6b883b2591d271b4f32', '7'),
+(5157, 329, 'https://embed.streamc.xyz/embed.php?hash=c861e412e78a1e7af1742042f6397c75', '8'),
+(5158, 329, 'https://embed.streamc.xyz/embed.php?hash=51817931abfa35b9dcd6fe623898356c', '9'),
+(5159, 329, 'https://embed.streamc.xyz/embed.php?hash=b45ad0524aa365153d66880cd46ac21c', '10'),
+(5160, 329, 'https://embed.streamc.xyz/embed.php?hash=f8f461102ae3580d5b68895a8cec8e4a', '11'),
+(5161, 329, 'https://embed.streamc.xyz/embed.php?hash=0fea133425538f55eecd46377b121ad4', '12'),
+(5162, 329, 'https://embed.streamc.xyz/embed.php?hash=6e64d66907ff79ad2b616c4cc7c2ab67', '13'),
+(5163, 329, 'https://embed.streamc.xyz/embed.php?hash=8a6fef6cf721bbed80ef201b1dc732c0', '14'),
+(5164, 329, 'https://embed.streamc.xyz/embed.php?hash=884105c196b8ae64b350ca5e500506f1', '15'),
+(5165, 329, 'https://embed.streamc.xyz/embed.php?hash=76ea5d638dece53e371d7487f60e1430', '16'),
+(5166, 329, 'https://embed.streamc.xyz/embed.php?hash=b23a911f7aa9660e5809fcc63096e2d8', '17'),
+(5167, 329, 'https://embed.streamc.xyz/embed.php?hash=b970308c28b79e01870b31c3620d9089', '18'),
+(5168, 329, 'https://embed.streamc.xyz/embed.php?hash=c9021213d895d31f2ebc5066c886031d', '19'),
+(5169, 329, 'https://embed.streamc.xyz/embed.php?hash=f6672a8feb48ef7a7489c7289ec48a2c', '20'),
+(5170, 329, 'https://embed.streamc.xyz/embed.php?hash=4bc7c82e3cb7b5499f2a6217944c7628', '21'),
+(5171, 329, 'https://embed.streamc.xyz/embed.php?hash=9c760f4770e2319e52e66eaf4a48fdc3', '22'),
+(5172, 330, 'https://embed.streamc.xyz/embed.php?hash=8e3311221a6113be41961f767b102c22', '1'),
+(5173, 330, 'https://embed.streamc.xyz/embed.php?hash=ccb545e08f95cdefc942883224bfcb6f', '2'),
+(5174, 330, 'https://embed.streamc.xyz/embed.php?hash=8b9d83d80f9a66a79c197ac527c8fcd6', '3'),
+(5175, 330, 'https://embed.streamc.xyz/embed.php?hash=db7439386fb6c2745801c5914b915b1f', '4'),
+(5176, 330, 'https://embed.streamc.xyz/embed.php?hash=535b0fca427c1fc3b076dd071fe177a2', '5'),
+(5177, 330, 'https://embed.streamc.xyz/embed.php?hash=5b5b8a428d79d30f8df590c6c22e3b99', '6'),
+(5178, 330, 'https://embed.streamc.xyz/embed.php?hash=a2d3756e6cc8f3530faf4bda89972be6', '7'),
+(5179, 330, 'https://embed.streamc.xyz/embed.php?hash=a87cee414c6768abe8b62f58f90103f4', '8'),
+(5180, 330, 'https://embed.streamc.xyz/embed.php?hash=54e60b945e8bb2d34d6f3dad43ec4c20', '9'),
+(5181, 330, 'https://embed.streamc.xyz/embed.php?hash=b7fd95a83f5eac6e2dc2a1a80088366b', '10'),
+(5182, 330, 'https://embed.streamc.xyz/embed.php?hash=af36396d32cbaaa187c0f4681daf41ed', '11'),
+(5183, 330, 'https://embed.streamc.xyz/embed.php?hash=e17f45bbc4be932d97c552041a8a42bc', '12'),
+(5184, 330, 'https://embed.streamc.xyz/embed.php?hash=f7ea811e815b0861653ebea9f8454252', '13'),
+(5185, 330, 'https://embed.streamc.xyz/embed.php?hash=3685230b05408de12da96eb2baa27afa', '14'),
+(5186, 330, 'https://embed.streamc.xyz/embed.php?hash=469eee5ffb583e74cf20b6c9abcc1ed2', '15'),
+(5187, 330, 'https://embed.streamc.xyz/embed.php?hash=d0b892056a8f99e887f353521427a3cd', '16'),
+(5188, 330, 'https://embed.streamc.xyz/embed.php?hash=07efcf75d2453067b4caf0469614151d', '17'),
+(5189, 330, 'https://embed.streamc.xyz/embed.php?hash=a556780f86260326524f33bc791781f2', '18'),
+(5190, 330, 'https://embed.streamc.xyz/embed.php?hash=061e3cabccae41b7fafe77ca04e04cd9', '19'),
+(5191, 330, 'https://embed.streamc.xyz/embed.php?hash=37cccd9ae7441dbc7910935b248a174e', '20'),
+(5192, 330, 'https://embed.streamc.xyz/embed.php?hash=57c185d9d12674696de09358b9fa5e0a', '21'),
+(5193, 330, 'https://embed.streamc.xyz/embed.php?hash=346752afe743775aefd587813f833540', '22'),
+(5194, 330, 'https://embed.streamc.xyz/embed.php?hash=189e429ac13cfa95196f40a7096f02f1', '23'),
+(5195, 330, 'https://embed.streamc.xyz/embed.php?hash=b33600371cc61df168d6f6c2c5521701', '24'),
+(5196, 330, 'https://embed.streamc.xyz/embed.php?hash=19c3ae140242bf1d9cd14bba73a548d5', '25'),
+(5197, 330, 'https://embed.streamc.xyz/embed.php?hash=2f05b270ce208e091b15295abddd249b', '26'),
+(5198, 330, 'https://embed.streamc.xyz/embed.php?hash=5d4286101a6128f43511a223c721193a', '27'),
+(5199, 330, 'https://embed.streamc.xyz/embed.php?hash=945c60712c18b355a68bd00c572ed35a', '28'),
+(5200, 330, 'https://embed.streamc.xyz/embed.php?hash=9999c2e6a67ccfd4c8cc50bb27ecf7c0', '29'),
+(5201, 330, 'https://embed.streamc.xyz/embed.php?hash=e99f69766f59ac9edb98e176b491c251', '30'),
+(5202, 330, 'https://embed.streamc.xyz/embed.php?hash=032c6b7882147c98bf7c28a874f6441e', '31'),
+(5203, 330, 'https://embed.streamc.xyz/embed.php?hash=bbb694e9186fc36bac5423628911fc98', '32'),
+(5204, 330, 'https://embed.streamc.xyz/embed.php?hash=53baafd5f1a37ed3fd3c3842e7827bf4', '33'),
+(5205, 330, 'https://embed.streamc.xyz/embed.php?hash=c0683f98a583af1b45003be15f1bdfbc', '34'),
+(5206, 330, 'https://embed.streamc.xyz/embed.php?hash=24046539204d81d9c4e22e5370a47d8c', '35'),
+(5207, 330, 'https://embed.streamc.xyz/embed.php?hash=ce648194eac4c4111ca2643d4dd96a1e', '36'),
+(5208, 330, 'https://embed.streamc.xyz/embed.php?hash=cbe41f7475982be203f736dc65cdabe2', '37'),
+(5209, 330, 'https://embed.streamc.xyz/embed.php?hash=27625a181e810ea7db42f1591f62ae6d', '38'),
+(5210, 330, 'https://embed.streamc.xyz/embed.php?hash=50c686676a0f6c84e406433ecc578b78', '39');
 
 -- --------------------------------------------------------
 
@@ -1769,11 +2025,11 @@ INSERT INTO `episode` (`id`, `id_movie`, `link_movie`, `episode`) VALUES
 
 CREATE TABLE `failed_jobs` (
   `id` bigint UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -1785,8 +2041,8 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `genre` (
   `id` int NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `status` int NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -1823,7 +2079,7 @@ INSERT INTO `genre` (`id`, `name`, `slug`, `status`) VALUES
 
 CREATE TABLE `migrations` (
   `id` int UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -1846,24 +2102,24 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `movie` (
   `id` int NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `original_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `original_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `total_episodes` int NOT NULL DEFAULT '1',
-  `description` text COLLATE utf8mb4_general_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `time` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `thumb_url` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `poster_url` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `thumb_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `poster_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `id_category` int NOT NULL,
   `id_country` int NOT NULL,
-  `id_genre` varchar(11) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `quality` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `language` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `id_genre` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `quality` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `language` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `director` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `casts` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `hot` int NOT NULL DEFAULT '1',
   `hot_slider` int DEFAULT NULL,
-  `trailer_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `trailer_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `status` int NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -1941,7 +2197,36 @@ INSERT INTO `movie` (`id`, `name`, `slug`, `original_name`, `total_episodes`, `d
 (297, 'Cuộc Chiến Sinh Tồn: Hồi Sinh', 'cuoc-chien-sinh-ton-hoi-sinh', 'The Escape of the Seven: Resurrection', 16, 'The Escape of the Seven thuộc thể loại tội phạm bí ẩn, gay cấn, đặc biệt khác với phần lớn dự án khác thường chú trọng vào cái thiện, phim lại tập trung vào nhân vật phản diện với những ham muốn xấu xa đáng sợ. Bộ phim xoay quanh bảy người bị cuốn vào vụ án về sự biến mất đầy bí ẩn của một cô gái trẻ. Bảy người họ với hoàn cảnh xuất thân khác nhau cùng bị vướng vào vòng xoáy của sự dối trá, những cám dỗ và tham vọng đầy phức tạp, trói buộc họ với vụ án mất tích.', '70 phút/tập', 'https://phim.nguonc.com/public/images/Post/PostCategory/Bd3KQb_4f.jpg', 'https://phim.nguonc.com/public/images/Post/PostCategory/WP3bv3_3f.jpg', 73, 7, '5', '0', '1', 'Oh Jun-hyeok', 'Uhm Ki-joon, Hwang Jung-eum, Lee Joon', 1, 0, NULL, 1),
 (298, 'Karasu wa Aruji wo Erabanai', 'karasu-wa-aruji-wo-erabanai', 'The Crow Does Not Choose the Lord, Yatagarasu: The Raven Does Not Choose Its Master', 20, 'Diễn ra trong thế giới Yamauchi, nơi quyền thống trị được nắm giữ bởi một gia tộc thuộc chủng tộc Yatagarasu chính hiệu. Karasu wa Aruji wo Erabanai thấy Yukiya, một Yatagarasu, bị lôi kéo vào âm mưu của Triều đình sau khi anh được chọn làm thị giả của một hoàng tử hoàng gia.', NULL, 'https://phim.nguonc.com/public/images/Film/141499.jpg', 'https://phim.nguonc.com/public/images/Film/141499.jpg', 74, 7, '5', '0', '1', NULL, NULL, 1, NULL, NULL, 1),
 (299, 'Kiếm Tiên Ở Đây', 'kiem-tien-o-day', 'Jian Xian Zai Ci', 86, 'Lâm Bắc Thần một lần tình cờ có được một chiếc điện thoại di động, điện thoại đưa hắn vào một thế giới mang tên Đông Đạo Chân Châu kéo theo một loạt sự kiện sau đó.', NULL, 'https://phim.nguonc.com/public/images/Film/98953.jpg', 'https://phim.nguonc.com/public/images/Film/98953.jpg', 74, 7, '1', '1', '1', NULL, NULL, 1, 0, NULL, 1),
-(301, 'Chốt Chặn Cuối Cùng', 'chot-chan-cuoi-cung', 'The Last Stand', 1, '<p>Cảnh sát trưởng Ray Owens đã rời khỏi Los Angeles và chuyển tới công tác tại một thị trấn vùng biên Sommerton Junction yên tĩnh. Tuy nhiên, cuộc sống yên bình của người dân nơi đây đã bị xáo trộn hoàn toàn khi Gabriel Cortez tên trùm buôn lậu khét tiếng nhất Tây bán cầu đã thực hiện thành công một cuộc đào tẩu mạo hiểm nhưng vô cùng ngoạn mục khỏi tay của FBI. Với sự trợ giúp của một nhóm những kẻ sống ngoài vòng pháp luật Cortez đã bắt theo một con tin và bắt đầu hành trình chạy trốn của mình hướng về biên giới Mỹ - Mexico.</p>', '107 phút', 'https://phim.nguonc.com/public/images/Film/chot-chan-cuoi-cung-thumb.jpg', 'https://phim.nguonc.com/public/images/Post/0f7kms1n_1920x1080-chotchancuoicung_782_432.jpeg', 75, 7, '1', '1', '1', 'Kim Jee-woon', 'Arnold Schwarzenegger, Johnny Knoxville, Jaimie Alexander, Forest Whitaker', 1, 0, NULL, 1);
+(301, 'Chốt Chặn Cuối Cùng', 'chot-chan-cuoi-cung', 'The Last Stand', 1, '<p>Cảnh sát trưởng Ray Owens đã rời khỏi Los Angeles và chuyển tới công tác tại một thị trấn vùng biên Sommerton Junction yên tĩnh. Tuy nhiên, cuộc sống yên bình của người dân nơi đây đã bị xáo trộn hoàn toàn khi Gabriel Cortez tên trùm buôn lậu khét tiếng nhất Tây bán cầu đã thực hiện thành công một cuộc đào tẩu mạo hiểm nhưng vô cùng ngoạn mục khỏi tay của FBI. Với sự trợ giúp của một nhóm những kẻ sống ngoài vòng pháp luật Cortez đã bắt theo một con tin và bắt đầu hành trình chạy trốn của mình hướng về biên giới Mỹ - Mexico.</p>', '107 phút', 'https://phim.nguonc.com/public/images/Film/chot-chan-cuoi-cung-thumb.jpg', 'https://phim.nguonc.com/public/images/Post/0f7kms1n_1920x1080-chotchancuoicung_782_432.jpeg', 76, 7, '1', '1', '1', 'Kim Jee-woon', 'Arnold Schwarzenegger, Johnny Knoxville, Jaimie Alexander, Forest Whitaker', 1, 0, NULL, 1),
+(302, 'Cuộc Chiến Sinh Tồn (2021)', 'cuoc-chien-sinh-ton-2021', 'Endangered Species', 1, 'Cuộc Chiến Sinh Tồn - Endangered Species (2021) xoay quanh câu chuyện về chuyến phiêu lưu đến vùng đất hoang dã ở Châu Phi của một gia đình Mỹ giàu có. Mục đích của chuyến đi là hàn gắn tình cảm gia đình đã rạn nứt trong thời gian vừa rồi. Thế nhưng ngay khi vừa đặt chân đến vùng đất này thì cả nhà bất ngờ bị tấn công bởi một con tê giác khổng lồ. Họ rơi vào tình thế ngàn cân treo sợi tóc, buộc phải tìm mọi cách để sinh tồn. Bộ phim có sự tham gia của các diễn viên gồm: Rebecca Romijn, Isabel Bassett, Philip Winchester, Michael Johnston, Jerry O\'Connell, Chris Fisher, Brenda Ngeso, Aseem Sharma, George Glenn Ouma, Pritul Raithatha, Stephen Adogo.', '101 phút', 'https://phim.nguonc.com/public/images/Film/ccsSqbpEqr2KK9eMvoeF8ERFCd5.jpg', 'https://phim.nguonc.com/public/images/Film/A0xW7GgeFQoQmPOn7HcHkBQ5nlb.jpg', 75, 7, '5', '1', '1', 'M. J. Bassett', 'Rebecca Romijn, Philip Winchester, Isabel Bassett', 1, NULL, NULL, 1),
+(303, 'Yuru Camp 3rd Season', 'yuru-camp-3rd-season', 'Yuru Camp△ Season 3, Laid-Back Camp Season 3', 12, 'Mùa thứ 3 của Yuru Camp△.', NULL, 'https://phim.nguonc.com/public/images/Film/142049.jpg', 'https://phim.nguonc.com/public/images/Film/142049.jpg', 73, 7, '5', '1', '1', NULL, NULL, 1, NULL, NULL, 1),
+(304, 'Những Tay Súng Trẻ 2', 'nhung-tay-sung-tre-2', 'Young Guns II', 1, 'Billy the Kid và nhóm tội phạm của hắn bị Cảnh sát trưởng Pat Garrett truy đuổi khắp lãnh thổ New Mexico, người mà các tay súng trẻ phải đối đầu nếu muốn đến được biên giới an toàn.', '104 phút', 'https://phim.nguonc.com/public/images/Film/7kMjla98srGHlFzAEmoGRcr6GN1.jpg', 'https://phim.nguonc.com/public/images/Film/sQNPWOTzl5kkZTW5ogSu0uSnreB.jpg', 76, 7, '5', '1', '1', 'Geoff Murphy', 'Emilio Estevez, Kiefer Sutherland, Lou Diamond Phillips', 1, NULL, NULL, 1),
+(305, 'Những Tay Súng Trẻ', 'nhung-tay-sung-tre', 'Young Guns', 1, 'Năm đó là năm 1878, Quận Lincoln. John Tunstall, một chủ trang trại người Anh, thuê 6 thanh niên nổi loạn làm \"người điều tiết\" để bảo vệ trang trại của mình trước Santa Fe Ring tàn nhẫn. Khi Tunstall bị giết trong một cuộc phục kích, Cơ quan quản lý, dẫn đầu bởi Bill the Kid (Emilio Estevez) nóng tính, tuyên chiến với Ring. Khi mối thù truyền kiếp của họ trở thành một cơn thịnh nộ đẫm máu, họ bị coi là những kẻ sống ngoài vòng pháp luật, trở thành đối tượng của cuộc truy lùng lớn nhất trong lịch sử miền Viễn Tây.', '107 phút', 'https://phim.nguonc.com/public/images/Film/stvh1A3mj8NYyczE7RvwdtDRCo2.jpg', 'https://phim.nguonc.com/public/images/Film/AoFo9HeJU7jiHAUNawpwhs3zQbd.jpg', 75, 7, '5', '1', '1', 'Christopher Cain', 'Emilio Estevez, Kiefer Sutherland, Lou Diamond Phillips', 1, NULL, NULL, 1),
+(306, 'Loài Ác Độc 4: Tỉnh Giấc', 'loai-ac-doc-4-tinh-giac', 'Species: The Awakening', 1, 'Miranda được một người chú tên Tom đem về nuôi dưỡng và cho ăn học tử tế. Từ bé đến lớn, cô không về thắc mắc về thân thế của mình. Khi đã là một giảng viên đại học danh tiếng, Miranda không còn bận tâm đến việc tìm hiểu xem cha mẹ ruột của mình là ai. Với cô, có được sự yêu thương của chú Tom là quá đủ. Nhưng một ngày kia, Miranda bỗng nhiên bất tỉnh. Lúc mở mắt ra, cô thấy mình nằm giữa một bãi máu, giống như vừa có một vụ thảm sát xảy ra mà cô chính là hung thủ. Hết sức sợ hãi, Miranda tìm gặp người chú để hỏi rõ sự tình. Cô kinh hoàng khi biết được sự thật rằng mình chỉ mang một nửa dòng máu con người, nửa kia được tạo ra từ ADN của người ngoài hành tinh...', '98 phút', 'https://phim.nguonc.com/public/images/Film/wPsu2NM0eUpoqycgjjnRJIwxK13.jpg', 'https://phim.nguonc.com/public/images/Film/9q9OmFsgCA5OGEa2leItT6tZjFl.jpg', 75, 7, '5', '1', '1', 'Nick Lyon', 'Helena Mattsson, Ben Cross, Dominic Keating', 1, NULL, NULL, 1),
+(307, 'Loài Ác Độc 3', 'loai-ac-doc-3', 'Species III', 1, 'Phần tiếp theo của loạt phim kinh dị giả tưởng Species I và II về những người lai bởi ADN của con người và người ngoài hành tinh, những kẻ cực kỳ quyến rũ nhưng cũng cực kỳ độc ác với sức mạnh khủng khiếp. Ngoại trừ Sara, đứa con của Eve – cô nàng kiều diễm thích giết đàn ông trong phần II – có dòng máu thuần nhất, những kẻ nửa người nửa alien đều đang mắc phải một căn bệnh chết người. Sara được giáo sư Almond và chàng sinh viên Dean che chở trước sự truy lùng của quân đội, trong lúc này những kẻ mang ADN của alien khác cũng đang lùng sục cô, nhằm từ Sara tìm ra giải pháp chữa trị căn bệnh tai quái của chúng. Và cũng như các phần trước, những cô nàng nóng bỏng đi đến đâu, nơi đó sẽ xuất hiện vài cái xác của những ...', '111 phút', 'https://phim.nguonc.com/public/images/Film/gaZYFFw1RlEIubcmGUFZbhjtH2p.jpg', 'https://phim.nguonc.com/public/images/Film/oG6k53yiliCN9RMmcGFyXeQhZNn.jpg', 75, 7, '5', '1', '1', 'Brad Turner', 'Robin Dunne, Robert Knepper, Sunny Mabrey', 1, NULL, NULL, 1),
+(308, 'Loài Ác Độc', 'loai-ac-doc', 'Species', 1, 'Năm 1993, dự án nghiên cứu văn minh ngoài Trái đất phát hiện sinh thể ngoài hành tinh và phối nó với gien người. Sinh vật lai mang tên Sil, mang hình hài một người đẹp nhưng có thể biến thành một sinh vật khát máu trong tích tắc. Đặc vụ Xavier được giao nhiệm vụ \"giải quyết\" Sil.', '108 phút', 'https://phim.nguonc.com/public/images/Film/cT5wdyo8kT7dycqjrolJ2sHWkFx.jpg', 'https://phim.nguonc.com/public/images/Film/5ccklJJR9McV3nzAgurdbc5nAlz.jpg', 75, 7, '5', '1', '1', 'Roger Donaldson', 'Natasha Henstridge, Ben Kingsley, Michael Madsen', 1, NULL, NULL, 1),
+(309, 'Cuộc Đời Đẹp', 'cuoc-doi-dep', 'Biutiful', 1, 'Bộ phim nói về những ngày tháng cuối cùng trong cuộc đời của Uxbal (Javier Bardem), một người đàn ông bình thường như bao người đàn ông khác tại thành phố Barcelona. Cuộc sống của Uxbal không hề “tươi đẹp”, như tựa phim Biutiful. Công việc dĩ nhiên không dễ dàng, đời sống cá nhân của Uxbal cũng đầy khó khăn. Người vợ Marambra (Maricel Álvarez) mắc chứng rối loạn lưỡng cực, đòi trở lại sau khi li thân. Hai đứa con nhỏ thiếu vắng sự quan tâm, không người chăm sóc. Một người bạn thân của Uxbal bị cảnh sát bắt, gã buộc phải lo lắng cho vợ con mình nên đã phản bội... Uxbal sống trong một mớ quan hệ hỗn loạn. Như thể chưa đủ, số phận còn giáng cho Uxbal một cú chí mạng: anh bị ung thư, chỉ còn sống được vài tháng... Mặc dù phải làm việc phạm pháp để mưu sinh nhưng Uxbal không phải là người xấu. Anh luôn tìm mọi cách để làm điều tốt, luôn giúp đỡ bạn bè, người thân, nhưng cuộc sống vốn khắc nghiệt, khó khăn đến tàn nhẫn...', '148 Phút', 'https://phim.nguonc.com/public/images/Film/cuoc-doi-dep-thumb.jpg', 'https://phim.nguonc.com/public/images/Film/cuoc-doi-dep-poster.jpg', 76, 7, '5', '1', '1', 'Alejandro González Iñárritu', 'Javier Bardem, Maricel Álvarez, Hanaa Bouchaib, Guillermo Estrella, Eduard Fernández', 1, NULL, NULL, 1),
+(310, 'Wonderful Precure!', 'wonderful-precure', 'わんだふるぷりきゅあ!', 0, 'Thị trấn Animal là nơi con người và động vật chung sống chan hoà với nhau. Inukai Iroha là một cô bé vô cùng yêu động vật, cô có một em cún nhỏ tên là Komugi. Một ngày nọ khi đang nô đùa với nhau ở công viên, thì một sinh vật “Garugaru” đã tấn công người dân. Iroha vì bảo vệ một cậu bé mà bị sinh vật ấy nhắm tới. Komugi mong muốn bảo vệ cô chủ của mình, nên đã hoá thành người, và biến thân thành… Precure !?', NULL, 'https://phim.nguonc.com/public/images/Film/140786.jpg', 'https://phim.nguonc.com/public/images/Film/140786.jpg', 73, 7, '5', '1', '1', NULL, NULL, 1, NULL, NULL, 1),
+(311, 'Hananoi Và Triệu Chứng Tình Yêu', 'hananoi-va-trieu-chung-tinh-yeu', 'Hananoi-kun to Koi no Yamai, A Condition Called Love, I\'m Addicted to You.', 12, 'Hananoi là một chàng trai khá nổi tiếng trong trường. Đẹp trai, thông minh và tuy khó gần nhưng lại bí ẩn lạ thường, không có cô gái nào là ngoài tầm với của anh. Trong một ngày mùa đông định mệnh, bạn cùng trường Hinase Hotaru chứng kiến cảnh anh ta chia tay với bạn gái rồi bị hất nước lên người.', NULL, 'https://phim.nguonc.com/public/images/Film/141411.jpg', 'https://phim.nguonc.com/public/images/Film/141411.jpg', 73, 7, '5', '1', '1', NULL, NULL, 1, NULL, NULL, 1),
+(312, 'Mĩ Vị Hầm Ngục', 'mi-vi-ham-nguc', 'Dungeon Meshi, Delicious in Dungeon, Dungeon Food', 24, 'Sau khi em gái bị nuốt bởi một con rồng và mất tất cả các nguồn cung cấp trong một cuộc đột kích dungeon thất bại, Laois và nhóm của mình quyết tâm cứu em gái mình trước khi cô bị tiêu hóa. Hoàn toàn bị phá sản và phải ăn những con quái vật làm thức ăn, họ gặp một người lùn sẽ giới thiệu họ đến với thế giới của dungeon meshi – món ăn được làm từ các thành phần như thịt của con dơi khổng lồ, nấm biết đi, thậm chí là những củ sâm biết nói…', NULL, 'https://phim.nguonc.com/public/images/Film/140374.jpg', 'https://phim.nguonc.com/public/images/Film/140374.jpg', 73, 7, '5', '1', '1', NULL, NULL, 1, NULL, NULL, 1),
+(313, 'Kibou no Chikara: Otona Precure \'23', 'kibou-no-chikara-otona-precure-23', 'Power of Hope ~Precure Full Bloom~', 12, 'Một dự án anime mới theo chân Yumehara Nozomi khi trưởng thành.', NULL, 'https://phim.nguonc.com/public/images/Film/138182.jpg', 'https://phim.nguonc.com/public/images/Film/138182.jpg', 73, 7, '5', '1', '1', NULL, NULL, 1, NULL, NULL, 1),
+(314, 'Phía Trước Là Yêu Sai Xin Hãy Quay Đầu', 'phia-truoc-la-yeu-sai-xin-hay-quay-dau', 'Her Lovers', 16, 'Bộ phim này mong muốn truyền tải đến khán giả một cốt truyện thoải mái, vui tươi và hài hước. Những mối quan hệ tốt đẹp cho phép bạn là chính mình một cách chân thật nhất. Trên đời không bao giờ có người yêu hoàn hảo, người phù hợp nhất mới là người tốt nhất.', '12 phút/tập', 'https://phim.nguonc.com/public/images/Post/1/a_100571301_m_601_zh-CN_260_360.jpg', 'https://phim.nguonc.com/public/images/Post/1/a_100571301_m_601_zh-CN_720_405.jpg', 73, 7, '5', '1', '1', 'LIZHIRU', 'Zhang Xiao Wan, Zuo Ling Feng, Li Ze', 1, NULL, NULL, 1),
+(315, 'Tình Yêu Hai Chiến Tuyến', 'tinh-yeu-hai-chien-tuyen', 'My Military Valentine', 16, 'Tình Yêu Hai Chiến Tuyến - My Military Valentine, kể về câu chuyện về sự lãng mạn và thống nhất giữa hai miền Triều Tiên giữa một ngôi sao thế giới Hàn Quốc đã nhập ngũ và một nữ quân nhân Triều Tiên. Lloyd là một ngôi sao thế giới có lượng fan nữ trên toàn cầu. Mặc dù anh ấy là một ngôi sao đẳng cấp thế giới, người đã càn quét tất cả các kỷ lục nghệ sĩ thế kỷ 21 của Hàn Quốc, nhưng anh ấy vẫn nhập ngũ sau khi bị cuốn vào một dạng âm mưu nào đó và trải qua một loạt các sự kiện. Thiếu úy Baek Young Ok dẫn đầu quân đoàn thứ tám của Triều Tiên trong lực lượng đặc biệt. Trái ngược với vẻ ngoài xinh đẹp, Baek Young Ok lại có nét quyến rũ hoài nghi và tính cách hoàn hảo.', '60 phút/tập', 'https://phim.nguonc.com/public/images/Post/2/d77be8c3999d_360_540.jpg', 'https://phim.nguonc.com/public/images/Post/2/ee92ca7a-a239-403e-a0bd-d83076c1a0ce_640_360.jpg', 73, 7, '5', '1', '1', 'Park Gwang Choon', 'Nam Gyu Ri, Kim Min seok', 1, NULL, NULL, 1),
+(316, 'Chuông Reo: Đảo Nhỏ Của Anh Đã Tới Rồi', 'chuong-reo-dao-nho-cua-anh-da-toi-roi', 'Bell Ringing', 12, 'Thẩm Thất là một cô gái vô tư, yêu ngay từ cái nhìn đầu tiên với Chi Ye bí ẩn, người đột nhiên đến vào một ngày nọ, và vì vậy cô bắt đầu theo đuổi anh ta, hy vọng chiến lược tình yêu của mình sẽ thành công. Tuy nhiên, việc Chi Ye liên tục từ chối và tránh mặt cô khiến Thẩm Thất cho rằng tất cả chỉ là mơ mộng, cho đến khi cô nói với anh rằng \"Ước mơ của em là được ở bên anh\". Với những lời đó, trái tim Chi Ye bắt đầu dịu lại. Khi những bánh răng tình yêu đó bắt đầu chuyển động, cả hai dành mỗi ngày bên nhau, cảm nhận những cơn gió và ngắm mây và hoàng hôn, dần dần tiến về sảnh cưới với sự chúc phúc của người dân trên đảo. Nhưng khi nhớ lại trăm năm trước, mối tình đẹp lại có một câu chuyện quá khứ khiến người ta không dám nhìn lại.', '12 phút/tập', 'https://phim.nguonc.com/public/images/Post/1/a_100569252_m_601_vi_260_360.jpg', 'https://phim.nguonc.com/public/images/Post/1/a_100569252_m_601_vi_1080_608.jpg', 73, 7, '5', '1', '1', 'Sylvan Zhao', 'Li Dai Kun, amber, Weilun Miao', 1, NULL, NULL, 1),
+(317, 'We Are Series: Chính Là Ta Yêu Nhau', 'we-are-series-chinh-la-ta-yeu-nhau', 'We Are', 16, 'We Are Series: Chính Là Ta Yêu Nhau mang đến câu chuyện miêu tả cuộc sống đầy những biến động của những người bạn đại học. Dù có học tập chăm chỉ đến đâu, họ cũng phải trải qua những câu chuyện khiến họ đau đầu khi vướng vào những khoảnh khắc phức tạp và những vướng mắc lãng mạn không ngừng nghỉ! Chúng ta là…bạn bè, nhưng sau đó chúng ta lại là kẻ thù của nhau. Chúng ta có tình cảm với nhau, tán tỉnh nhau, và làm thế nào chúng ta có thể yêu nhau đây? Chúng ta hãy cùng nhau khám phá những mối quan hệ đặc biệt này nhé.', '45 Phút/Tập', 'https://phim.nguonc.com/public/images/Post/2/a_100569868_m_601_vi_260_360.jpg', 'https://phim.nguonc.com/public/images/Post/2/a_100569868_m_601_vi_720_405.jpg', 73, 7, '5', '1', '1', 'New Siwaj Sawatmaneekul', 'Aou Thanaboon Kiatniran, Boom Tharatorn Jantharaworakarn, Phuwin Tangsakyuen, Pond Naravit Lertratkosum, Satang Kittiphop Sereevichayasawat, Winny Thanawin Pholcharoenrat', 1, NULL, NULL, 1),
+(318, 'Bộ Bộ Khuynh Tâm', 'bo-bo-khuynh-tam', 'Step by Step Love', 28, 'Câu chuyện kể về nhà thiết kế không gian Bộ Nhiễm, người trong một cuộc gặp tình cờ đã kết giao với ông chủ Lộ Sâm Dương, người cũng có khả năng thiết kế. Cả hai đã trải qua nhiều thất bại nhưng không ngừng tiến bộ trên con đường theo đuổi ước mơ của mình, và tình yêu và lòng trung thành với lý tưởng ban đầu vẫn được giữ mãi trong lòng họ.', '30 phút/tập', 'https://phim.nguonc.com/public/images/Post/PostCategory/Bo-Bo-Khuynh-Tam.jpg', 'https://phim.nguonc.com/public/images/Post/PostCategory/bo-bo-khuynh-tam-poster.jpg', 73, 7, '5', '1', '1', 'Shen Jin Fei', 'Triệu Chí Vỹ, Lư Dương Dương, Thường Bân, Nghê Mỹ Thi', 1, NULL, NULL, 1),
+(319, 'Thảm Họa Pompeii', 'tham-hoa-pompeii', 'Pompeii', 1, 'Lấy bối cảnh năm 79 sau công nguyên, “Pompeii” là câu chuyện huyền thoại về Milo (Kit Harington thủ vai), một nô lệ bị biến thành dũng sĩ giác đấu bất khả chiến bại phải chạy đua với thời gian để cứu lấy người anh yêu, Cassia (Emily Browning), cô con gái trẻ đẹp của một lái buôn giàu có bị ép hứa hôn với một tên nghị sĩ La Mã đồi bại. Và khi đỉnh núi lửa Vesuvius phun trào dòng dung nham nóng bỏng, Milo phải tìm cách thoát ra ngoài đấu trường để cứu người anh yêu giữa thành Pompeii đang sụp đổ tan tành... Sử dụng bối cảnh của một trong những thảm họa núi lửa kinh hoàng nhất trong lịch sử, “Pompeii” lần này sẽ kể về một đấu sĩ nô lệ người Celtic, người đã đem lòng yêu một người phụ nữ quý tộc. Câu chuyện xảy ra trong chính cái đêm định mệnh khi ngọn đại hỏa sơn Vesuvius phun trào và chôn vùi toàn bộ thành phố cảng xinh đẹp trong chớp mắt. Tréo ngoe thay, vào chính thời khắc sinh tử ấy, chàng dũng sĩ giác đấu lại mặt đối mặt với kẻ thù đã giết chết gia đình mình nhiều năm trước đây.', '105 phút', 'https://phim.nguonc.com/public/images/Film/gUG5u04Pm9wgqD9mY3RW59iHLJB.jpg', 'https://phim.nguonc.com/public/images/Film/2Pd1IbMVubk2UNorJK5G1xR1cwG.jpg', 75, 7, '5', '1', '1', 'Paul W. S. Anderson', 'Kit Harington, Emily Browning, Adewale Akinnuoye-Agbaje', 1, NULL, NULL, 1),
+(320, 'Anh Hùng - Hero', 'anh-hung-hero', '英雄', 1, 'Phim Anh Hùng lấy bối cảnh trong thời Trung Quốc cổ đại, trước khi triều đại của hoàng đế đầu tiên, chiến tranh phe phái suốt Sáu Quốc âm mưu ám sát nhà lãnh đạo mạnh mẽ nhất, Tần. Khi một quan chức nhỏ đánh bại ba kẻ thù chính Qin, anh được triệu tập vào cung điện để nói với Tần câu chuyện của chiến thắng đáng ngạc nhiên của mình.', '99 phút', 'https://phim.nguonc.com/public/images/Film/1CxIB5G9ChPnCJ1r04SebpTyR5B.jpg', 'https://phim.nguonc.com/public/images/Film/jDz6RYN3nKYtlo7J9IMvGoJit7B.jpg', 76, 7, '5', '1', '1', 'Trương Nghệ Mưu', 'Lý Liên Kiệt, Lương Triều Vỹ, Trương Mạn Ngọc', 1, NULL, NULL, 1),
+(321, 'Thư Gửi Juliet', 'thu-gui-juliet', 'Letters to Juliet', 1, '<p>Shopie đang cùng chồng chưa cưới đi nghỉ mát trong chuyến “tiền trăng mật” của mình. Thế nhưng, chuyến đi đến Verona đã làm thay đổi cả cuộc đời Shopie khi cô tìm được một bức tường chứa đầy những lá thư của một người lạ mặt gửi đến Juliet – một nhân vật của Shakespeare. Bức thư của một cô gái trẻ kể về mối tình của cô vào năm 1957, và cô mất liên lạc với “Romeo” của mình từ đó. Cảm động vì mối tình bền bỉ của người con gái đó, Shopie đã viết trả lại, như một lời tri ân tình cảm. Không thể ngờ rằng, Claire, cô gái viết bức thư xin lời khuyên từ Juliet đó vẫn còn sống. Nhận được thư trả lời, cô gái trẻ, nay đã thành một thiếu phụ như sống lại những khoảnh khắc tình yêu quý giá trong cuộc đời mình. Cô quyết định cùng cháu trai của mình đi từ Mỹ tới Ý để gặp Shopie. Được động viên, cả ba người cùng bắt đầu chuyến hành trình tìm lại người yêu cũ của Claire. Để rồi từ đó, chuyến hành trình đã giúp ba con người xích lại gần nhau hơn, và tìm được tình yêu đích thực của chính cuộc đời mình.</p>', '105 phút', 'https://phim.nguonc.com/public/images/Film/thu-gui-juliet-thumb.jpg', 'https://phim.nguonc.com/public/images/Film/thu-gui-juliet-poster.jpg', 75, 7, '5', '1', '1', 'Gary Winick', 'Amanda Seyfried, Gael García Bernal, Vanessa Redgrave', 1, NULL, NULL, 1),
+(322, 'Tiền Định', 'tien-dinh', 'Predestination', 1, 'Một mật vụ phải quay trở về quá khứ để ngăn chặn một tên khủng bố. Anh đóng giả làm một nhân viên quán bar nhằm thu thập thông tin về kẻ đánh bom. Một hôm, anh ta gặp một vị khách tên John. Người này cá cược với tay mật vụ rằng anh ta có thể kể một câu chuyện khó tin nhất trên đời, phần thưởng sẽ là 1 chai rượu.  Thế rồi John bắt đầu kể câu chuyện cuộc đời mình, rằng trước kia anh ta là một cô gái tên Jane, trải qua muôn vàn chuyện lớn nhỏ và rồi trở thành người đàn ông John. Sau đó là một cuộc hành trình dài và xoắn não khi John được tay mật vụ trao cho cơ hội thay đổi quá khứ của chính mình...', '97 phút', 'https://phim.nguonc.com/public/images/Film/38Xr1JnV1ZcLQ55zmdSp6n475cZ.jpg', 'https://phim.nguonc.com/public/images/Film/u5JKxjMuKk0dVXqmS4e4gHo8pfg.jpg', 76, 7, '5', '1', '1', 'Michael Spierig', 'Ethan Hawke, Sarah Snook, Noah Taylor', 1, NULL, NULL, 1),
+(323, 'Mật Mã Gốc', 'mat-ma-goc', 'Source Code', 1, '<p>Để hỗ trợ điều tra chống khủng bố hiệu quả hơn, chính phủ Hoa Kỳ đã nghiên cứu 1 dự án bí mật tái tạo quá khứ dựa trên ký ức còn sót lại từ não bộ của các nạn nhân sau thảm họa với tên gọi Source Code. Để tìm ra thủ phạm vụ đánh bom trên tàu cao tốc vừa diễn ra, đại úy Colter Stevens phải xâm nhập vào trong ký ức của Sean Fentress - một hành khách trên tàu - lục lạo trong 8 phút sót cuối cùng những dấu hiệu khả nghi để xác định kẻ khủng bố và tìm hiểu sự thật đằng sau dự án Source Code mà anh đang tham gia...</p>', '93 phút', 'https://phim.nguonc.com/public/images/Film/mat-ma-goc-thumb.jpg', 'https://phim.nguonc.com/public/images/Post/c_digo_fuente-535504785-large.jpg', 76, 7, '5', '1', '1', 'Duncan Jones', 'Jake Gyllenhaal, Michelle Monaghan, Vera Farmiga', 1, NULL, NULL, 1),
+(324, 'Hành Tinh Khỉ (2001)', 'hanh-tinh-khi-2001', 'Planet of the Apes', 1, 'Hành trình của phi hành gia Leo, người Trái Đất, sau khi thực hiện nhiệm vụ trong vũ trụ gặp phải tai nạn bất ngờ phải đáp xuống một hành tinh kỳ lạ. Nơi đây loài khỉ đã trở thành loài thống lĩnh với trí tuệ và một hệ thống cai trị khắc nghiệt. Cuộc phiêu lưu của Leo để giành lại tự do trong một xã hội của loài linh trưởng giống với loài người nhất này sẽ ra sao khi những bí mật về tổ tiên của hành tinh dần được hé lộ. Một siêu phẩm của đạo diễn Tim Burton với diễn xuất tài năng của ngôi sao hành động Mark Walberg là dấu đảm bảo cho một bộ phim bom tấn của điện ảnh Hoa Kỳ.', '120 phút', 'https://phim.nguonc.com/public/images/Film/2IZcJHsTugOdyg0Y8ejj4CM2X3a.jpg', 'https://phim.nguonc.com/public/images/Film/rF0Y0fYVsNFEvGve8Nq0Ij9EDCM.jpg', 76, 7, '5', '1', '1', 'Tim Burton', 'Mark Wahlberg, Tim Roth, Helena Bonham Carter', 1, NULL, NULL, 1),
+(325, 'Bartender: Kami no Glass', 'bartender-kami-no-glass', 'Bartender: Glass of God', 0, 'Nằm ở quận Ginza của Tokyo là Eden Hall, một quán bar yên tĩnh mà ít người có thể lui tới. băng qua. Nó được điều hành bởi nhân viên pha chế huyền thoại Ryu Sasakura, một thiên tài pha chế đồ uống phù hợp cho đúng khách hàng. Trong suốt thời gian của anh ấy tại Eden Hall, khách hàng từ mọi tầng lớp xã hội, mang theo đủ loại gánh nặng, đến Hall để lấy một chiếc ly thần thánh và nói lời tử tế với Ryu, cả hai đều giúp giải quyết vấn đề của họ và hồi sinh họ cho lần khác trong cuộc sống.', NULL, 'https://phim.nguonc.com/public/images/Film/141872.jpg', 'https://phim.nguonc.com/public/images/Film/141872.jpg', 74, 7, '5', '1', '1', NULL, NULL, 1, NULL, NULL, 1),
+(326, 'Kaii to Otome to Kamikakushi', 'kaii-to-otome-to-kamikakushi', 'Mysterious Disappearances, Mysteries, Maidens, And Mysterious Disappearances', 12, 'Trong Kaii To Otome To Kamikakushi, ta sẽ được nghe câu chuyện được viết lại bởi Sumireko về anh em Odashino. Không rõ vì lý do gì, anh em Odashino lại liên quan khá nhiều đến những thế lực tâm linh huyền bí - hay còn được mọi người biết đến dưới dạng truyền thuyết đô thị hoặc yêu ma quỷ quái. Cùng với cặp anh em, Sumireko dần biết được nhiều hơn về thế giới mà con người không thể nhìn thấy đồng thời biết được nhiều thứ hơn về người \"bạn đồng hành\" của mình.', NULL, 'https://phim.nguonc.com/public/images/Film/141688.jpg', 'https://phim.nguonc.com/public/images/Film/141688.jpg', 74, 7, '5', '1', '1', NULL, NULL, 1, NULL, NULL, 1),
+(327, 'Kenka Dokugaku', 'kenka-dokugaku', 'Viral Hit, Ssaumdokhak, How to Fight, 싸움독학', 0, 'Câu chuyện của một học sinh trung học tên Hobin Yoo. Anh ấy dành cuộc sống hàng ngày của mình để bị bắt nạt bởi các bạn cùng lớp và người phát trực tuyến nổi tiếng Newtube (nền tảng phát trực tuyến) Pakgo. Anh ấy cũng làm việc bán thời gian để trả viện phí cho mẹ mình.', NULL, 'https://phim.nguonc.com/public/images/Film/142521.jpg', 'https://phim.nguonc.com/public/images/Film/142521.jpg', 76, 7, '5', '1', '1', NULL, NULL, 1, NULL, NULL, 1),
+(328, 'Huyền Thoại Iljimae', 'huyen-thoai-iljimae', 'Iljimae', 20, '<p>Lấy bối cảnh triều đại Joseon, Ryung hoạt động như một tay xã hội đen vô dụng trên thương trường vào ban ngày nhưng vào ban đêm, anh ta là một tên cướp hào hiệp chuyên cướp của các quan chức chính phủ tham nhũng để chia cho người nghèo. Sau mỗi vụ cướp, anh ta để lại một cành gỗ từ cây mận tại nơi xảy ra vụ cướp để chịu trách nhiệm về vụ cướp. Những công dân nghèo chỉ biết anh ta là Iljimae. Bong Soon là một cô gái vui nhộn, có kỹ năng võ thuật tốt và sống như một kẻ lừa đảo. Cô chỉ yêu Ryung và hy sinh cả cuộc đời mình cho anh. Eun Chae là con gái của một quan chức chính phủ, bản chất tốt và thường giúp đỡ những người khốn khổ. Cô tình cờ gặp Iljimae và câu chuyện tình yêu ngọt ngào của họ bắt đầu. Tuy nhiên, tình yêu của cô khiến Iljimae rơi vào tình thế nguy hiểm vì một Cận vệ Hoàng gia cũng yêu cô.</p>', '65 phút/tập', 'https://phim.nguonc.com/public/images/Film/huyen-thoai-iljimae-thumb.jpg', 'https://phim.nguonc.com/public/images/Film/huyen-thoai-iljimae-poster.jpg', 74, 7, '5', '1', '1', 'Lee Yong-seok', 'Lee Joon-gi, Han Hyo-joo, Park Si-hoo, Lee Young-ah, Kim Sung-ryung', 1, NULL, NULL, 1),
+(329, 'Vệ Sĩ Body Guard', 've-si-body-guard', 'Bodyguard', 22, 'Hong Kyung Tak (Cha Seung Won đóng) buộc phải giải ngũ vì lỗi của cấp trên, trở thành người thất nghiệp và cố gắng kiếm sống bằng việc phục vụ tại nhà hàng của cha mẹ mình. May mắn thay, trong một lần Kyung Tak cứu được khách hàng của nữ vệ sĩ Yu Jin (Han Go Eun đóng) giúp anh được tuyển dụng vào một công ty bảo vệ. Cuộc sống của Kyung Tak dần thay đổi khi Na Young (Im Eun Kyung đóng) chuyển đến thị trấn với bà của mình và trở thành bạn của Kyung Mi - em gái Kyung Tak. Công việc của Kyung Tak về sau càng khó khăn, nguy hiểm hơn khi mà các thế lực xã hội đen trong thành phố liên tục hoành hành. Bên cạnh đó, anh còn phát hiện ra nhiều điều uẩn khúc, đen tối sau công ty KBB trong vụ bầu cử tổng thống và bất ngờ hơn khi Na Young cũng liên quan đến các hoạt động ngầm bất chính của KBB và các thế lực mafia.', '50 phút/tập', 'https://phim.nguonc.com/public/images/Film/ve-si-body-guard-thumb.jpg', 'https://phim.nguonc.com/public/images/Film/ve-si-body-guard-poster.jpg', 73, 7, '5', '1', '1', 'Jeon Ki Sang', 'Cha Seung Won, Im Eun kyung, Han Go Eun, Song Il Gook', 1, NULL, NULL, 1),
+(330, 'Thất Kiếm Khách - Thất Kiếm Hạ Thiên Sơn', 'that-kiem-khach-that-kiem-ha-thien-son', 'Seven Swords Of Mountain', 39, 'Giao Long Kiếm được tạo bởi huyền thiết (sắt đen), thân kiếm là kim đồng (đồng vàng) phát nên ánh đỏ, đầu kiếm mềm mại. Phần bảo vệ tay được làm thành nhìn cầu, có thể dễ dàng thay đổi phương hướng, linh hoạt vô thường. Vì sự sắc bén không thể sánh nổi của Giao Long Kiếm, sát khí tràn đầy có thế khiến hai thanh kiếm khi chạm nhau tạo nên một sự rung động lớn, quả cầu có thể xoay chuyển bên trong phần bảo hộ tay giúp hoá giải xung lực. Có một câu nói rằng \"Giao Long Nhất Xuất, Thiên Hạ Vô Địch\" (một khi Giao Long Kiếm được xuất ra thì mọi thanh kiếm phải thuần phục) Thanh Can Kiếm của Vân Thông được dùng vẫn thạch (đá rơi xuống) luyện thành, bề ngoài không bằng phẳng, có cảm giác như các hột nhỏ liên kết, có thể khúc xạ ánh sáng. Thân kiếm có viên ngọc thép phản quang, khi múa kiếm sẽ cho ra bảy sắc cầu vồng. Trong khi các quang tuyến tứ tán thì đường kiếm phiêu diêu bay bổng khiến muốn tránh cũng không kịp. Hối Minh đại sư cảm thấy sự sắc bén của Giao Long Kiếm quá lợi hại và sát khí quá nặng nên ông đã chế tạo ra Thanh Can Kiếm. Vị trí của nó trong Thất Kiếm được xem như khắc tinh của Giao Long Kiếm. Cảnh Tinh Kiếm được Hối Minh đại sư luyện thành cho một kẻ thích bán mạng như Tân Long Tử. Nó là một thanh song thủ đoản kiếm, phần chuôi có cương ty kiếm nhứ, phần đuôi có ngọc sắt. Canh Tinh Kiếm có thể phóng đi và thu trở về, trong lúc thu về có thể lợi dụng những sợi tơ bên trong để trói buộc đối thủ, bình thường được đặt ở phía trước ngực. Thiết kế những sợi bông như sao băng là vì Tân Long Tử không bao giờ phòng thủ, cần phải có một thứ gì đó kiềm chế Long Tử. Trong lúc bình thường xuất kiếm, sao băng có thể bảo hộ chủ nhân của nó, còn những lúc hoang tính đại phát, sao băng sẽ làm thương bản thân để khắc chế Long Tử.', '45 Phút/Tập', 'https://phim.nguonc.com/public/images/Post/2/Pw4JjoARcpT.jpg', 'https://phim.nguonc.com/public/images/Post/2/that-kiem-khach-2006-big.jpg', 73, 7, '5', '1', '1', 'Từ Khắc', 'Triệu Văn Trác, Vương Học Binh, Thái Thiếu Phân, Lí Tiểu Nhiễm, Kiều Chấn Vũ, Vương Lệ Khôn, Lữ Lương Vĩ, Tôn Phi Phi', 1, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -2099,7 +2384,36 @@ INSERT INTO `movie_genre` (`id`, `id_movie`, `id_genre`) VALUES
 (418, 301, 18),
 (419, 299, 16),
 (420, 299, 17),
-(421, 299, 19);
+(421, 299, 19),
+(422, 302, 5),
+(423, 303, 5),
+(424, 304, 5),
+(425, 305, 5),
+(426, 306, 5),
+(427, 307, 5),
+(428, 308, 5),
+(429, 309, 5),
+(430, 310, 5),
+(431, 311, 5),
+(432, 312, 5),
+(433, 313, 5),
+(434, 314, 5),
+(435, 315, 5),
+(436, 316, 5),
+(437, 317, 5),
+(438, 318, 5),
+(439, 319, 5),
+(440, 320, 5),
+(441, 321, 5),
+(442, 322, 5),
+(443, 323, 5),
+(444, 324, 5),
+(445, 325, 5),
+(446, 326, 5),
+(447, 327, 5),
+(448, 328, 5),
+(449, 329, 5),
+(450, 330, 5);
 
 -- --------------------------------------------------------
 
@@ -2108,8 +2422,8 @@ INSERT INTO `movie_genre` (`id`, `id_movie`, `id_genre`) VALUES
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -2121,11 +2435,11 @@ CREATE TABLE `password_reset_tokens` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -2140,15 +2454,15 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `users` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `google_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `role` int DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -2158,8 +2472,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `avatar`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `google_id`, `role`) VALUES
 (5, 'Liệt Diễm', NULL, 'nhatabc270@gmail.com', NULL, '$2y$12$0u9/9AmQull1nyHBIrcURO2Op8bVGBBU9l2wfYxLbLXL58GWXCTQa', NULL, '2024-03-30 20:21:40', '2024-03-30 20:21:40', '0', 0),
-(7, 'Trần Nhật', 'https://lh3.googleusercontent.com/a/ACg8ocJ0DSz_GDjnfix_87kgjKwDdGpjB_yHFo8f1eDDIy60h2xlaZg=s96-c', 'nhatcaca2004@gmail.com', NULL, '$2y$12$CWbQNa5OCG6wI2uMQxMQEeVAunS45RM/CcrSwAIjbChCxB6IAYP/e', NULL, '2024-04-07 03:06:13', '2024-04-17 18:41:08', '117622144869182708438', 1),
-(8, 'Trần Văn Nhật PH 3 3 5 7 2 FPL HN', 'https://lh3.googleusercontent.com/a/ACg8ocKxoTsqb80gNqPWINy5wDfIV6ovGs-Xr8OrjAP8XM2FvRKxOCqK=s96-c', 'nhattvph33572@fpt.edu.vn', NULL, '$2y$12$tEiFsXWwoqHVM8n8O1SRjuTvJkIP.TXXSpbMtz0ruU/DbaBKcAC7m', NULL, '2024-04-07 03:12:59', '2024-04-07 03:13:31', '107430092281701089295', 0);
+(7, 'Trần Nhật', 'https://lh3.googleusercontent.com/a/ACg8ocJ0DSz_GDjnfix_87kgjKwDdGpjB_yHFo8f1eDDIy60h2xlaZg=s96-c', 'nhatcaca2004@gmail.com', NULL, '$2y$12$IcnV31gXu70bUtxXJEU5EeYJkBfSSKiurqZkWmSbx74JmA0XcUlOS', NULL, '2024-04-07 03:06:13', '2024-04-18 20:56:00', '117622144869182708438', 1),
+(8, 'Trần Văn Nhật PH 3 3 5 7 2 FPL HN', 'https://lh3.googleusercontent.com/a/ACg8ocKxoTsqb80gNqPWINy5wDfIV6ovGs-Xr8OrjAP8XM2FvRKxOCqK=s96-c', 'nhattvph33572@fpt.edu.vn', NULL, '$2y$12$NLMjuslOc6bkn6mTcBmI3uEaXpDgHGjpKrmUM0Kmr7pt3TA1jPgXi', NULL, '2024-04-07 03:12:59', '2024-04-18 20:39:33', '107430092281701089295', 0);
 
 --
 -- Indexes for dumped tables
@@ -2260,7 +2574,7 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT for table `episode`
 --
 ALTER TABLE `episode`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4955;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5211;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -2284,13 +2598,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=302;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=331;
 
 --
 -- AUTO_INCREMENT for table `movie_genre`
 --
 ALTER TABLE `movie_genre`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=422;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=451;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
