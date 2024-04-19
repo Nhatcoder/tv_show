@@ -9,12 +9,16 @@
              <div class="header_menu">
                  <ul class="header_menu__list d-flex ">
                      <li class="header_menu__list-item">
-                         <a href="{{ route('/') }}" class="header_menu__list-item--link active">Đề xuất</a>
+                         <a href="{{ route('/') }}"
+                             class="header_menu__list-item--link {{ Request::is('/') ? 'active' : '' }}">Đề xuất</a>
                      </li>
                      @foreach ($category as $item)
                          <li class="header_menu__list-item">
                              <a href="{{ route('category', ['slug' => $item->slug]) }}"
-                                 class="header_menu__list-item--link">{{ $item->name }}</a>
+                                 class="header_menu__list-item--link {{ request()->is('the-loai/' . $item->slug . '*') ? 'active' : '' }}">
+                                 {{ $item->name }}
+                             </a>
+
                          </li>
                      @endforeach
                  </ul>
@@ -36,8 +40,8 @@
              <div class="header_search">
                  <form action="{{ route('search') }}" method="get">
                      <div class="header_search__form position-relative">
-                         <input type="text" name="search" data-url="{{ route('/') }}" id="search" autocomplete="off"
-                             value="{{ $movie_search_link->name ?? ($_GET['search'] ?? '') }}"
+                         <input type="text" name="search" data-url="{{ route('/') }}" id="search"
+                             autocomplete="off" value="{{ $movie_search_link->name ?? ($_GET['search'] ?? '') }}"
                              placeholder="Nhập tên phim" class="header_search__form-input">
                          <button type="submit" class="header_search__form-icon text-white ">
                              <i class="fa-solid fa-magnifying-glass header_search__form-icon_link"></i>
