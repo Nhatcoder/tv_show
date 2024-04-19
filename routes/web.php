@@ -22,8 +22,8 @@ use Illuminate\Support\Facades\Session;
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/admin-login', [AdminController::class, 'login'])->name('admin-login');
     Route::post('/admin-login', [AdminController::class, 'loginPost'])->name('admin-login');
-    Route::get('/admin-register', [AdminController::class, 'register'])->name('admin-register');
-    Route::post('/admin-register', [AdminController::class, 'registerPost'])->name('admin-register');
+    // Route::get('/admin-register', [AdminController::class, 'register'])->name('admin-register');
+    // Route::post('/admin-register', [AdminController::class, 'registerPost'])->name('admin-register');
 });
 
 Route::group(['middleware' => ['auth', 'user.role']], function () {

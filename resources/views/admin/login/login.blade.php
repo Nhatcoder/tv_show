@@ -37,8 +37,8 @@
                                 </div>
                                 <a href="#" class="auth-link text-black">Quên mật khẩu?</a>
                             </div>
-                            <div class="text-center mt-4 font-weight-light"> Bạn chưa có tài khoản? <a href="{{ route('admin-register') }}"
-                                    class="text-primary">Tạo mới</a>
+                            {{-- <div class="text-center mt-4 font-weight-light"> Bạn chưa có tài khoản? <a href="{{ route('admin-register') }}"
+                                    class="text-primary">Tạo mới</a> --}}
                             </div>
                         </form>
                     </div>
