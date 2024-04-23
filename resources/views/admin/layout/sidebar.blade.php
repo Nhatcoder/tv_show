@@ -3,19 +3,23 @@
            <li class="nav-item nav-profile">
                <a href="#" class="nav-link">
                    <div class="profile-image">
-                       <img class="img-xs rounded-circle" src="images/faces/face8.jpg" alt="profile image">
+                       @if (Auth::check())
+                           <img class="img-xs rounded-circle" src="{{ Auth::user()->avatar }}" alt="profile image">
+                       @endif
                        <div class="dot-indicator bg-success"></div>
                    </div>
                    <div class="text-wrapper">
                        @if (Auth::check())
-                           <p class="profile-name">{{ Auth::user()->name }}</p>
+                           <p class="profile-name">
+                               {{ strlen(Auth::user()->name) > 18 ? substr(Auth::user()->name, 0, 18) . '...' : Auth::user()->name }}
+                           </p>
                        @endif
                        <p class="designation">Administrator</p>
                    </div>
-                   <div class="icon-container">
+                   {{-- <div class="icon-container">
                        <i class="icon-bubbles"></i>
                        <div class="dot-indicator bg-danger"></div>
-                   </div>
+                   </div> --}}
                </a>
            </li>
            <li class="nav-item nav-category">
@@ -33,7 +37,6 @@
                    <span class="menu-title">Danh mục</span>
                    <i class="icon-menu menu-icon"></i>
                </a>
-
 
            </li>
            <li class="nav-item {{ request()->is('genre*') ? 'active' : '' }}">

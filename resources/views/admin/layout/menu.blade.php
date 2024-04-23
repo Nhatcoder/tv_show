@@ -18,15 +18,16 @@
                 <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
                     <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
                         aria-expanded="false">
-                        <img class="img-xs rounded-circle ml-2" src="images/faces/face8.jpg" alt="Profile image">
                         @if (Auth::check())
+                            <img class="img-xs rounded-circle ml-2" src="{{ Auth::user()->avatar }}"
+                                alt="Profile image">
                             <span class="font-weight-normal"> {{ Auth::user()->name }} </span>
                         @endif
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                         <div class="dropdown-header text-center">
-                            <img class="img-md rounded-circle" src="images/faces/face8.jpg" alt="Profile image">
                             @if (Auth::check())
+                                <img class="img-md rounded-circle" src="{{ Auth::user()->avatar }}" alt="Profile image">
                                 <p class="mb-1 mt-3">{{ Auth::user()->name }}</p>
                                 <p class="font-weight-light text-muted mb-0">{{ auth()->user()->email }}</p>
                             @endif
@@ -43,8 +44,8 @@
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button class="dropdown-item"><i
-                                    class="dropdown-item-icon icon-power text-primary"></i>Đăng xuất</button>
+                            <button class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Đăng
+                                xuất</button>
                         </form>
                     </div>
                 </li>
