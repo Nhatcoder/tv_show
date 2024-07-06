@@ -23,11 +23,17 @@ class AdminController extends Controller
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
         $api = "https://phim.nguonc.com/api/films/phim-moi-cap-nhat?page=" . $page;
         $data = Http::get($api)->json();
-        // return response()->json($data);
 
-        $movies = Movie::all();
+        $movieUpdateToday = Movie::where('updated_at', 'like', '%' . date('Y-m-d') . '%')->count();
+        $moviesIncomplete = Movie::select('movie.*', DB::raw('COUNT(episode.id) as episode_count'))
+            ->leftJoin('episode', 'movie.id', '=', 'episode.id_movie')
+            ->groupBy('movie.id')
+            ->havingRaw('episode_count < movie.total_episodes')
+            ->count();
 
-        return view('admin.index', compact('data', 'movies'));
+        $movies = Movie::where('status', 1)->get();
+
+        return view('admin.index', compact('data', 'movies', 'movieUpdateToday', 'moviesIncomplete'));
     }
 
     // Đồng bộ thêm phim và cả tập
@@ -132,7 +138,7 @@ class AdminController extends Controller
             $movie->quality = 1;
             $movie->language = 1;
             $movie->director = $data_movie_detail['movie']["director"];
-            $movie->casts  = $data_movie_detail['movie']["casts"];
+            $movie->casts = $data_movie_detail['movie']["casts"];
 
             $category = Category::first();
             $genre = Genre::first();
@@ -164,18 +170,19 @@ class AdminController extends Controller
         $api = "https://phim.nguonc.com/api/film/" . $slug;
         $data_movie_detail = Http::get($api)->json();
 
+
         $largestEpisode = Episode::selectRaw('id_movie, COUNT(episode) AS episode_count')
             ->where('id_movie', $movie_find->id)
             ->groupBy('id_movie')
             ->get();
 
-
         $success = '';
         $warning = '';
 
+        // dd($data_movie_detail['movie']['episodes']);
 
         $episode_count = "";
-        foreach($largestEpisode as $ep){
+        foreach ($largestEpisode as $ep) {
             $episode_count = $ep->episode_count;
         }
 
@@ -188,7 +195,7 @@ class AdminController extends Controller
                     $episode->id_movie = $movie_find->id;
                     $episode->link_movie = $value['embed'];
                     $episode->episode = $newEpisodeNumber;
-                    // $episode->save();
+                    $episode->save();
 
                     $success = 'Thêm tập phim thành công';
                 } else {

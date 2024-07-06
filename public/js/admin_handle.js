@@ -125,44 +125,5 @@ $('.select_category').on('change', function () {
     })
 })
 
-// add_movie_api
-// $('.add_movie_api').on('click', function () {
-//     var slug = $(this).attr('data-slug');
-//     var route = $(this).attr('data-route');
-//     var api = "https://phim.nguonc.com/api/film/" + slug;
-
-//     // Kiểm tra xem meta tag csrf-token có tồn tại không
-//     var csrfToken = $('meta[name="csrf-token"]').attr('content');
-//     if (!csrfToken) {
-//         console.error('CSRF token không tồn tại');
-//         return;
-//     }
-
-//     fetch(api)
-//         .then(response => response.json())
-//         .then(data => {
-//             $.ajax({
-//                 headers: {
-//                     'X-CSRF-TOKEN': csrfToken
-//                 },
-//                 url: route,
-//                 type: "POST",
-//                 data: data,
-//                 success: function () {
-//                     Swal.fire({
-//                         icon: "success",
-//                         title: "Thành công ",
-//                         text: "Thêm phim thành công",
-//                         showConfirmButton: false,
-//                         timer: 1000
-//                     })
-//                 },
-//                 error: function (xhr, status, error) {
-//                     console.error(status, error);
-//                 }
-//             });
-//         })
-//         .catch(error => console.error('Không lấy được data', error));
-// });
 
 

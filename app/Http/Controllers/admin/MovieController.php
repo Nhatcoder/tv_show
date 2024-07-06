@@ -18,8 +18,9 @@ class MovieController extends Controller
 
     public function index()
     {
-        $category = Category::all();
-        $movies = Movie::with('category', 'movie_genre')->withCount('episode')->orderBy('id', 'desc')->get();
+        $category = Category::where('status', 1)->get();
+        // $movies = Movie::with('category', 'movie_genre')->withCount('episode')->orderBy('id', 'desc')->get();
+        $movies = Movie::with('category', 'movie_genre')->withCount('episode')->orderBy('id', 'desc')->paginate(10);
 
         $path = public_path() . "/json/";
         if (!is_dir($path)) { // not a directory or không có file thì tạo mới
@@ -257,12 +258,32 @@ class MovieController extends Controller
         $movie = Movie::find($id);
         if ($movie) {
             $movie->delete();
-
             Movie_Genre::whereIn('id_movie', [$movie->id])->delete();
             Episode::whereIn('id_movie', [$movie->id])->delete();
-
-            // return redirect('movie')->with('success', "Bạn xóa thành công");
-            return back()->with('success', "Bạn xóa thành công");
         }
+        return redirect()->back()->with('success', 'Bạn đã xóa thành công');
+
+    }
+
+    public function movieDelete(Request $request)
+    {
+        if (!empty($request->id)) {
+            $movie = Movie::find($request->id);
+            if ($movie) {
+                $movie->delete();
+                Movie_Genre::whereIn('id_movie', [$movie->id])->delete();
+                Episode::whereIn('id_movie', [$movie->id])->delete();
+            }
+        }
+    }
+
+    public function movieSearch(Request $request)
+    {
+        $movies = Movie::searchMovieAdmin($request->input('search'), $request->input('category_id'));
+        $category = Category::where('status', 1)->get();
+
+        return response()->json([
+            "view" => view('admin.movie.movie_search', compact('movies', 'category'))->render(),
+        ]);
     }
 }

@@ -2,11 +2,6 @@
 @section('title', 'Cp')
 @section('content')
     <div class="main-panel">
-        {{-- @if (Session::has('success'))
-            <div class="alert alert-success">
-                {{ Session::get('success') }}
-            </div>
-        @endif --}}
 
         @if (session('success'))
             <script>
@@ -99,7 +94,7 @@
                                 <div class=" col-md -6 col-xl report-inner-card">
                                     <div class="inner-card-text">
                                         <span class="report-title">Phim cập nhật hôm nay </span>
-                                        <h4>546</h4>
+                                        <h4>{{ $movieUpdateToday }}</h4>
                                     </div>
                                     <div class="inner-card-icon bg-success">
                                         <i class="icon-rocket"></i>
@@ -126,7 +121,7 @@
                                 <div class="col-md-6 col-xl report-inner-card">
                                     <div class="inner-card-text">
                                         <span class="report-title">Phim chưa thêm tập</span>
-                                        <h4>2650</h4>
+                                        <h4>{{ $moviesIncomplete }}</h4>
                                     </div>
                                     <div class="inner-card-icon bg-warning">
                                         <i class="icon-globe-alt"></i>
@@ -144,7 +139,8 @@
                         <div class="card-body">
                             <div class="d-sm-flex align-items-center mb-4">
                                 <h4 class="card-title mb-sm-0">Phim cập nhật hàng ngày</h4>
-                                <a href="{{ route('add-full', ['page' => isset($_GET['page']) ? $_GET['page'] : 1]) }}" class="btn btn-primary text-dark ml-auto mb-3 mb-sm-0"> Đồng bộ</a>
+                                <a href="{{ route('add-full', ['page' => isset($_GET['page']) ? $_GET['page'] : 1]) }}"
+                                    class="btn btn-primary text-dark ml-auto mb-3 mb-sm-0"> Đồng bộ</a>
                             </div>
                             <div class="list_movies">
                                 <table class="list_movies_scoll table table-bordered table-hover ">
@@ -195,9 +191,6 @@
 
                                                 <td>
                                                     <div class="d-flex">
-
-
-
                                                         @if (!$check_movie)
                                                             <form
                                                                 action="{{ route('add-movie', ['slug' => $item['slug']]) }}"
@@ -238,15 +231,14 @@
                             </div>
 
                             {{-- Phân trang --}}
-
                             <div class="d-flex mt-4 flex-wrap">
                                 <p class="text-muted">Hiển thị 10 phim của {{ $data['paginate']['total_items'] }}</p>
                                 <nav class="ml-auto">
                                     @php
-                                        $total_pages = ceil($data['paginate']['total_items'] / 10); // Số trang tính được dựa trên tổng số mục và số mục trên mỗi trang (ở đây là 10).
-                                        $current_page = isset($_GET['page']) ? $_GET['page'] : 1; // Trang hiện tại, mặc định là trang đầu tiên.
-                                        $start_page = max(1, $current_page - 2); // Trang đầu tiên trong khoảng 5 trang.
-                                        $end_page = min($total_pages, $start_page + 4); // Trang cuối cùng trong khoảng 5 trang.
+                                        $total_pages = ceil($data['paginate']['total_items'] / 10);
+                                        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+                                        $start_page = max(1, $current_page - 2);
+                                        $end_page = min($total_pages, $start_page + 4);
                                     @endphp
 
                                     <ul class="pagination separated pagination-info">

@@ -51,14 +51,13 @@ Route::group(['middleware' => ['auth', 'user.role']], function () {
     Route::get('/movie-change-language', [MovieController::class, 'update_movie_language'])->name('movie-change-language');
     Route::get('/movie-change-hot-slider', [MovieController::class, 'update_movie_hot_slider'])->name('movie-change-hot-slider');
     Route::get('/movie-change-category', [MovieController::class, 'update_movie_category'])->name('movie-change-category');
+    Route::post('/movie-search', [MovieController::class, 'movieSearch'])->name('movieSearch');
+    Route::post('/movie-delete', [MovieController::class, 'movieDelete'])->name('movieDelete');
 
     Route::resource('/episode', EpisodeController::class);
     Route::get('/episode/{id_movie}/{id_episode}/edit', [EpisodeController::class, 'edit'])->name('episode.edit');
 
     Route::get('/select-movie', [EpisodeController::class, 'selectMovie'])->name('select-movie');
-
-    // route phim api nguon cc
-    // Route::get('/get-movie-api', [GetMovieApiController::class, 'getMovieApi'])->name('get-movie-api');
 
 
     Route::get('/only-role', function () {

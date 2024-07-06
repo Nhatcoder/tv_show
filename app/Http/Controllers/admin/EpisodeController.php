@@ -15,7 +15,7 @@ class EpisodeController extends Controller
      */
     public function index()
     {
-        $list_episodes = Episode::with('movie')->orderBy('id', 'desc')->get();
+        $list_episodes = Episode::with('movie')->orderBy('id', 'desc')->paginate(10);
         return view("admin.episode.index", compact('list_episodes'));
     }
 

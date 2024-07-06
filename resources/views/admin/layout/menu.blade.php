@@ -9,7 +9,7 @@
                     alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
-            <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Chào mừng bảng điều khiển ổn định!</h5>
+            <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Chào mừng bảng điều khiển !</h5>
             <ul class="navbar-nav navbar-nav-right ml-auto">
                 <form class="search-form d-none d-md-block" action="#">
                     <i class="icon-magnifier"></i>
@@ -32,9 +32,8 @@
                             @endif
                         </div>
                         <a class="dropdown-item"><i class="dropdown-item-icon icon-user text-primary"></i> Hồ sơ cá
-                            nhân <span class="badge badge-pill badge-danger">1</span></a>
-                        <a class="dropdown-item"><i class="dropdown-item-icon icon-speech text-primary"></i>
-                            Messages</a>
+                            nhân </span></a>
+                     
                         <a href="{{ route('/') }}" class="dropdown-item"><i
                                 class="dropdown-item-icon icon-energy text-primary"></i>
                             Chuyển trang web người dùng</a>

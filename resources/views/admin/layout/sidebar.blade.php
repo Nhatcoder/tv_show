@@ -10,7 +10,7 @@
                        @if (Auth::check())
                            <p class="profile-name">{{ Auth::user()->name }}</p>
                        @endif
-                       <p class="designation">Administrator</p>
+                       <p class="designation">Quản trị viên</p>
                    </div>
                    <div class="icon-container">
                        <i class="icon-bubbles"></i>

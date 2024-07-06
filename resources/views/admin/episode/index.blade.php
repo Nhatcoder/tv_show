@@ -24,7 +24,7 @@
                                 <a href="{{ route('episode.create') }}" class="btn btn-primary ">Thêm tập phim</a>
                             </div>
 
-                            <table class="table table-bordered table-hover " id="TableMovie">
+                            <table class="table table-bordered table-hover ">
                                 <thead>
                                     <tr class=" bg-secondary text-dark fw-bold ">
                                         <th> STT</th>
@@ -71,13 +71,6 @@
                                                         <button type="submit" class="btn btn-danger"
                                                             id="deleteButton_{{ $item->id }}">Xóa</button>
                                                     </form>
-
-                                                    {{-- <form action="{{ route('episode.destroy', ['episode' => $item->id]) }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger">Xóa</button>
-                                                    </form> --}}
                                                 </div>
                                             </td>
                                         </tr>
@@ -85,6 +78,36 @@
 
                                 </tbody>
                             </table>
+                            <div class="d-flex mt-4 flex-wrap">
+                                <p class="text-muted">Hiển thị 10 phim của {{ $list_episodes->total() }}</p>
+                                <nav class="ml-auto">
+                                    @php
+                                        $total_pages = $list_episodes->lastPage();
+                                        $current_page = $list_episodes->currentPage();
+                                        $start_page = max(1, $current_page - 2);
+                                        $end_page = min($total_pages, $start_page + 4);
+                                    @endphp
+
+                                    <ul class="pagination separated pagination-info">
+                                        <li class="page-item"><a href="{{ $list_episodes->url(1) }}" class="page-link"><i
+                                                    class="icon-control-start"></i></a>
+                                        </li>
+                                        <li class="page-item"><a href="{{ $list_episodes->previousPageUrl() }}"
+                                                class="page-link"><i class="icon-arrow-left"></i></a></li>
+                                        @for ($i = $start_page; $i <= $end_page; $i++)
+                                            <li class="page-item {{ $i == $current_page ? 'active' : '' }}"><a
+                                                    href="{{ $list_episodes->url($i) }}"
+                                                    class="page-link">{{ $i }}</a></li>
+                                        @endfor
+                                        <li class="page-item"><a href="{{ $list_episodes->nextPageUrl() }}" class="page-link"><i
+                                                    class="icon-arrow-right"></i></a></li>
+                                        <li class="page-item"><a href="{{ $list_episodes->url($total_pages) }}"
+                                                class="page-link"><i class=" icon-control-end"></i></a>
+                                        </li>
+                                    </ul>
+
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
