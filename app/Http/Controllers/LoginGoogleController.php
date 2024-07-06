@@ -23,14 +23,14 @@ class LoginGoogleController extends Controller
             $user = Socialite::driver('google')->user(); //mạng xã hội là google
             // return response()->json($user); 
 
-            $finduser = User::where('google_id', $user->google_id)->first(); // tìm kiếm tài khoản đăng nhập chưa
+            $finduser = User::where('google_id', $user->google_id)->first(); 
 
-            if ($finduser) { // nếu có đăng nhập
+            if ($finduser) { 
 
                 Auth::login($finduser);
 
                 return redirect()->route('/');
-            } else { // nếu chưa chưa tạo mới
+            } else { 
                 $newUser = User::updateOrCreate(['email' => $user->email], [
                     'name' => $user->name,
                     'avatar' => $user->avatar,
