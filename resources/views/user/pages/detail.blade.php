@@ -114,7 +114,31 @@
         </div>
         <!-- end movie_detail -->
 
-        <div class="movie_tabnav mt-5 px-5">
+        <h2 class="movie_hot__title display-2 fw-bolder py-2 text-white px-5 mt-5">Phim liên quan</h2>
+
+        <div class="movie_hot px-5 pt-1">
+            <div class="row">
+                @foreach ($movie_related as $item)
+                    <div class="col-2 my-3 ">
+                        <a class="text-decoration-none text-white movie_hot__link"
+                            href="{{ route('detail', ['slug' => $item->slug]) }}">
+                            <div class="position-relative">
+                                <img class="movie_hot__img w-100 d-block rounded  " src="{{ $item->thumb_url }}"
+                                    alt="">
+                                <div class="movie_hot__episode">
+                                    <span class="movie_hot__episode-text">HD - Vietsub</span>
+                                </div>
+                            </div>
+                            <div class="movie_hot__name">
+                                <p class="movie_hot__title-name">{{ $item->name }}</p>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- <div class="movie_tabnav mt-5 px-5">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
@@ -128,8 +152,7 @@
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-                    tabindex="0">
+                <div class="tab-pane fade " id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                     <div class="movie_hot px-0 pt-2">
                         <div class="row">
                             @foreach ($movie_related as $item)
@@ -152,15 +175,37 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-                    tabindex="0">
-                    <div class="row g-0 w-100 bg-white">
-                        <div class="fb-comments" data-width="100%" data-colorscheme="light"
-                            data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width=""
-                            data-numposts="5"></div>
+                <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel"
+                    aria-labelledby="profile-tab" tabindex="0">
+                    <div class="box-comment bg-white p-4">
+                        <div class="list-comment">
+                            <ul>
+                                <li>Comment</li>
+                                <li>Comment</li>
+                                <li>Comment</li>
+                            </ul>
+                        </div>
+                        <form action="" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <textarea name="comment" id="comment" placeholder="Viết bình luận ..." class="form-control" cols="30"
+                                    rows="5"></textarea>
+                        </form>
                     </div>
+                    <style>
+                
+
+                        #comment:focus {
+                            border: 1px solid #000;
+                            box-shadow: none;
+                        }
+                    </style>
+
+
+
+           
                 </div>
             </div>
-        </div>
+        </div> --}}
     </main>
 @endsection

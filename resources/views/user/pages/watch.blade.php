@@ -9,7 +9,6 @@
                         title="{{ $movie->name }}" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen autoplay muted></iframe>
-
                 </div>
 
                 {{-- Tập phim tập --}}
@@ -121,12 +120,296 @@
                                 <div class="movie_detail__item-list--description"><strong
                                         class="movie_detail__item-title">Miêu
                                         tả:</strong>
-                                    {{ $movie->description }}
+                                    {!! $movie->description !!}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="box-comment mt-5">
+                    <div class="list-comment">
+                        <div class="total_comment text-white">
+                            <div class="total_comment__number">{{ count($listComent) > 0 ? count($listComent) : 0 }} bình
+                                luận</div>
+                            <div class="total_comment__sort">
+                                <span><i class="fa-solid fa-bars-staggered"></i> Sắp xếp
+                                    theo</span>
+                                <div class="option_sort">
+                                    <ul class="option_sort__list">
+                                        <li class="option_sort__item">
+                                            <button class="btn-link--confirm">Bình luận hàng đầu</button>
+                                        </li>
+                                        <li class="option_sort__item">
+                                            <button class="btn-link--confirm">Bình luận mới nhất</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @csrf
+
+                    @if (Auth::check())
+                        <div class="form-message">
+                            <div class="form_message__avatar">
+                                <img src="{{ filter_var($userNow->avatar, FILTER_VALIDATE_URL) ? $userNow->avatar : asset('images/images/user.png') }}"
+                                    alt="">
+                                {{-- <img src="{{ asset('images/') }}/images/user.png" alt=""> --}}
+                            </div>
+
+                            <div class="form_message__content">
+                                <div contenteditable="true" class="comment"></div>
+                                <div class="btn_send__comment">
+                                    <button type="reset" class="btn btn-light btn-reset--comment">Hủy</button>
+                                    <button id="btn-submit" class="btn btn-success btn-send">Bình
+                                        luận</button>
+                                </div>
+                            </div>
+                        </div>
+                    @else
+                        <div class="form-message">
+                            <div class="form_message__avatar">
+                                <img src="{{ asset('images/') }}/images/user.png" alt="">
+                            </div>
+
+                            <div class="form_message__content">
+                                <div class="comment" @readonly(true)>Đăng nhập để bình luận</div>
+                            </div>
+                        </div>
+                    @endif
+
+
+                    <div id="list_comment__render">
+                        @foreach ($listComent as $item)
+                            <div class="list-comment">
+                                <ul class="list_comment mt-4 text-white">
+                                    <li class="list_comment__item d-flex justify-content-between align-items-start">
+                                        <div class="d-flex">
+                                            <div class="image_comment">
+                                                <img src="{{ filter_var($item->user->avatar, FILTER_VALIDATE_URL) ? $item->user->avatar : asset('images/images/user.png') }}"
+                                                    alt="">
+                                            </div>
+
+                                            <div class="action_comment">
+                                                <div class="info_comment">
+                                                    <p class="info_comment_title">{{ $item->user->name }} <span
+                                                            class="info_comment_time">{{ $item->created_at }}</span></p>
+                                                    <p class="info_comment_content">
+                                                        {{ $item->comment }}
+                                                    </p>
+                                                </div>
+
+                                                <div class="action_link mt-2">
+                                                    <button class="btn-link--comment" data-id="{{ $item->id }}">
+                                                        {{-- <i class="fa-solid fa-thumbs-up"></i> --}}
+                                                        <i class="fa-regular fa-thumbs-up"></i>
+                                                        5
+                                                    </button>
+
+                                                    <button class="btn-link--comment">
+                                                        {{-- <i class="fa-solid fa-thumbs-down"></i> --}}
+                                                        <i class="fa-regular fa-thumbs-up fa-rotate-180"></i>
+                                                        5
+                                                    </button>
+
+                                                    <button class="btn-link--comment">
+                                                        Phản hồi
+                                                    </button>
+
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        {{-- <div class="action_comment__btn">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </div> --}}
+                                    </li>
+                                </ul>
+
+                            </div>
+                        @endforeach
+                    </div>
+
+                </div>
+                <style>
+                    .form-message {
+                        display: flex;
+                        justify-content: center;
+                        align-items: start;
+                        padding: 10px;
+                        margin-top: 20px;
+                    }
+
+                    .form_message__avatar img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+
+                    .btn_send__comment {
+                        display: none;
+                        position: absolute;
+                        bottom: -45px;
+                        right: 0;
+                    }
+
+                    .btn-send {
+                        background: #157347;
+                    }
+
+
+                    .form_message__content {
+                        width: 100%;
+                        margin-left: 15px;
+                        border-bottom: 1px solid #8a928c;
+                        color: #fff;
+                        transition: all 5s linear;
+                        position: relative;
+                        margin-top: 16px;
+                    }
+
+                    .form_message__content .comment {
+                        width: 100%;
+                        outline: none;
+                        padding: 5px;
+                        border: none;
+                        background-color: transparent;
+                        color: #fff;
+
+                        white-space: pre-wrap;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+
+                    }
+
+                    .total_comment {
+                        display: flex;
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+
+                    .option_sort {
+                        display: none;
+                        margin-top: 15px;
+                    }
+
+                    .total_comment__sort:hover .option_sort {
+                        display: block;
+                    }
+
+                    .option_sort__list {
+                        width: 200px;
+                        background-color: #24252b;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        z-index: 1;
+                    }
+
+                    .option_sort__list::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: -10px;
+                        left: 10px;
+                        width: 0;
+                        height: 0;
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        border-bottom: 10px solid #24252b;
+                    }
+
+
+                    .btn-link--confirm {
+                        font-size: 16px;
+                        font-weight: 400;
+                        border: none;
+                        width: 100%;
+                        background-color: #24252b;
+                        outline: none;
+                        color: #fff;
+                        padding: 10px 20px;
+                    }
+
+                    .btn-link--confirm:hover {
+                        background-color: #8a928c;
+                        color: #3cde5b;
+                    }
+
+                    .total_comment__sort {
+                        margin-left: 20px;
+                        cursor: pointer;
+                        font-size: 16px;
+                        position: relative;
+                    }
+
+                    .total_comment__number {
+                        font-weight: 700;
+                    }
+
+                    .list_comment {
+                        /* display: flex; */
+                        padding: 10px;
+                    }
+
+                    .image_comment img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+
+                    .action_comment {
+                        margin-left: 10px;
+                    }
+
+                    .info_comment_title {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #fff;
+                    }
+
+                    .info_comment_time {
+                        font-size: 14px;
+                        color: #8a928c;
+                        font-weight: 400;
+                    }
+
+                    .info_comment_content {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #f0e9e9;
+                        line-height: 1.4;
+                        margin-top: 10px;
+                        padding-right: 30px;
+                    }
+
+                    .action_comment__btn {
+                        margin-top: 30px;
+                        cursor: pointer;
+                        padding: 7px 13.5px;
+                        border: 1px solid transparent;
+                        border-radius: 50%;
+                    }
+
+                    .action_comment__btn:hover {
+                        padding: 7px 13.5px;
+                        border: 1px solid #fff;
+                        border-radius: 50%;
+                    }
+
+                    .btn-link--comment {
+                        color: #fff;
+                        border: none;
+                        padding-left: 0;
+                        background-color: transparent;
+                        outline: none;
+
+                    }
+                </style>
             </div>
         </div>
 
@@ -161,7 +444,77 @@
             </div>
         </div>
 
-
-
     </main>
+
+
+@endsection
+
+
+@section('script')
+    <script type="module">
+        window.Echo.channel('comment.{{ $movie->id }}')
+            .listen('Comment', (e) => {
+                console.log(e);
+                $('#list_comment__render').prepend(e.comment);
+            })
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $(".btn-reset--comment").on("click", function() {
+                $(".comment").text("");
+            })
+
+            $(".comment").on("keyup", function() {
+                let comment = $(this).text().trim();
+                if (comment.length > 0) {
+                    $("#btn-submit").removeClass("btn-send");
+                    $(".btn_send__comment").show(300);
+                } else {
+                    $("#btn-submit").addClass("btn-send");
+                }
+            });
+
+            $(".comment").on("blur", function() {
+                $(".btn_send__comment").stop(true).fadeToggle(300);
+            });
+
+            $("#btn-submit").on("click", function() {
+                let comment = $(".comment").text().trim();
+                if (comment.length > 0) {
+                    $.ajax({
+                        type: "POST",
+                        url: "{{ route('movieComment') }}",
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            comment,
+                            movie_id: "{{ $movie->id }}",
+                        },
+                        success: function() {
+                            $(".comment").text("");
+                            $("#btn-submit").addClass("btn-send");
+                        },
+                    })
+
+                }
+            });
+
+            $(document).on("click", ".btn-link--comment", function() {
+                // alert("ok: "+$(this).data('id'));
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('movieCommentLike') }}",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        comment_id: $(this).data('id'),
+                    },
+                    success: function() {
+                        // alert("ok");
+                    },
+                })
+
+
+            })
+        });
+    </script>
 @endsection

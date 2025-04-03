@@ -59,19 +59,10 @@ Route::group(['middleware' => ['auth', 'user.role']], function () {
 
     Route::get('/select-movie', [EpisodeController::class, 'selectMovie'])->name('select-movie');
 
-
-    Route::get('/only-role', function () {
-        echo "only role";
-    });
+ 
 
 });
 
-
-
-// hủy session
-// Route::get('/', [IndexController::class, function () {
-//     return Session::flush();
-// }])->name('/');
 
 
 // user
@@ -82,6 +73,10 @@ Route::get('/register', [UserController::class, 'register'])->name('register');
 Route::post('/register', [UserController::class, 'registerPost'])->name('register');
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/profile', [IndexController::class, 'profile'])->name('profile');
+
+Route::post('/movie-comment', [IndexController::class, 'movieComment'])->name('movieComment');
+Route::post('/movie-comment-like', [IndexController::class, 'movieCommentLike'])->name('movieCommentLike');
+
 
 Route::get('/the-loai/{slug}', [IndexController::class, 'category'])->name('category');
 Route::get('/phim/{slug}', [IndexController::class, 'movie_detail'])->name('detail');

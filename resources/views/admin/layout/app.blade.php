@@ -18,19 +18,20 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" />
 
     <!-- plugins:css -->
-    <link rel="stylesheet" href="{{ asset('vendors/simple-line-icons/css/simple-line-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/flag-icon-css/css/flag-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin') }}">
+    <link rel="stylesheet" href="{{ asset('admin/vendors/flag-icon-css/css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/vendors/css/vendor.bundle.base.css') }}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="{{ asset('vendors/daterangepicker/daterangepicker.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('vendors/chartist/chartist.min.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('admin/vendors/daterangepicker/daterangepicker.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('admin/vendors/chartist/chartist.min.css') }}"> --}}
     <!-- End plugin css for this page -->
 
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="{{ asset('vendors/select2/select2.min.css') }} ">
-    <link rel="stylesheet" href="{{ asset('vendors/select2-bootstrap-theme/select2-bootstrap.min.css') }} ">
+    <link rel="stylesheet" href="{{ asset('admin/vendors/select2/select2.min.css') }} ">
+    <link rel="stylesheet" href="{{ asset('admin/vendors/select2-bootstrap-theme/select2-bootstrap.min.css') }} ">
     <!-- Layout styles -->
+    <link rel="stylesheet" href="{{ asset('vendors/simple-line-icons/css/simple-line-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" />

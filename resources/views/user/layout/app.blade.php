@@ -7,8 +7,11 @@
     <title>Trang chủ</title>
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
-    <link href="{{ asset('bootstrap5.3/css/bootstrap.css') }}" rel="stylesheet">
 
+
+
+    <link href="{{ asset('bootstrap5.3/css/bootstrap.css') }}" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- link icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -16,6 +19,7 @@
     <!-- link css -->
     <link rel="stylesheet" href="{{ asset('css/user.css') }}">
     <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
+
 
 </head>
 
@@ -42,7 +46,12 @@
     <script src="{{ asset('bootstrap5.3/js/bootstrap.js') }}"></script>
 
     {{-- link jquery --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    @yield('script')
+
     <script src="{{ asset('js/main.js') }}"></script>
 
 </body>

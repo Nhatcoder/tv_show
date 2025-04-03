@@ -67,7 +67,10 @@
                                                 </div>
 
                                                 @php
-                                                    $movie_episode_first = \App\Models\Episode::where('id_movie', $movie->id)->first();
+                                                    $movie_episode_first = \App\Models\Episode::where(
+                                                        'id_movie',
+                                                        $movie->id,
+                                                    )->first();
                                                 @endphp
 
                                                 <div class="slider_content__icon">
@@ -114,9 +117,10 @@
         </div>
         <!-- end slider -->
 
+
         <!-- Movie hot -->
         <div class="movie_hot bg-black ">
-            <h1 class="movie_hot__title display-2 fw-bolder  py-2 text-white ">Đề xuất hot</h1>
+            <h1 class="movie_hot__title display-2 fw-bolder py-2 text-white ">Đề xuất hot </h1>
 
             <div class="row">
                 @foreach ($hot_movie as $item)

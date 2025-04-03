@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Editable Div</title>
+    <style>
+        .comment {
+            width: 100%;
+            min-height: 50px;
+            /* Chiều cao tối thiểu */
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            white-space: pre-wrap;
+            /* Cho phép xuống dòng */
+            word-wrap: break-word;
+            /* Chia từ khi xuống dòng */
+            overflow-wrap: break-word;
+            /* Đảm bảo văn bản xuống dòng đúng cách */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form_message__content">
+        <div contenteditable="true" class="comment" placeholder="Tên người dùng"></div>
+    </div>
+</body>
+
+</html>

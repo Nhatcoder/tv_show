@@ -228,6 +228,7 @@ class AdminController extends Controller
     }
     public function loginPost(Request $request)
     {
+        
         $credetaials = [
             'email' => $request->email,
             'password' => $request->password

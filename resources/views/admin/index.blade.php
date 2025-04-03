@@ -243,14 +243,16 @@
 
                                     <ul class="pagination separated pagination-info">
                                         <li class="page-item"><a href="?page={{ max(1, $current_page - 1) }}"
-                                                class="page-link"><i class="icon-arrow-left"></i></a></li>
+                                                class="page-link"><i class="fas fa-arrow-left"></i>
+                                            </a></li>
                                         @for ($i = $start_page; $i <= $end_page; $i++)
                                             <li class="page-item {{ $i == $current_page ? 'active' : '' }}"><a
                                                     href="?page={{ $i }}"
                                                     class="page-link">{{ $i }}</a></li>
                                         @endfor
                                         <li class="page-item"><a href="?page={{ min($total_pages, $current_page + 1) }}"
-                                                class="page-link"><i class="icon-arrow-right"></i></a></li>
+                                                class="page-link"><i class="fas fa-arrow-right"></i>
+</a></li>
                                     </ul>
 
                                 </nav>

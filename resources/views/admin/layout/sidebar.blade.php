@@ -4,8 +4,8 @@
                <a href="#" class="nav-link">
                    <div class="profile-image">
                        @if (Auth::check())
-                           {{-- <img class="img-xs rounded-circle" src="{{ Auth::user()->avatar }}" alt="profile image"> --}}
-                           <img class="img-xs rounded-circle" src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/292011549_1192119298221484_5096720056686154923_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFfvGbLLkXpkhh4_AgGJ9KToO6Wq5TewTyg7parlN7BPCu6wW3kiNaglFWrRn8OpMrGULICPaEcVvgpxUWvv0gn&_nc_ohc=auvuDrYJm2MQ7kNvgGAolrR&_nc_ht=scontent.fhan2-5.fna&oh=00_AYDgiMUWa3cPHWzXJ47seM9yEBCtvIw42coUJxC9gaciQg&oe=668ED914" alt="profile image">
+                           <img class="img-xs rounded-circle" src="{{ Auth::user()->avatar }}" alt="profile image">
+                           {{-- <img class="img-xs rounded-circle" src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/292011549_1192119298221484_5096720056686154923_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFfvGbLLkXpkhh4_AgGJ9KToO6Wq5TewTyg7parlN7BPCu6wW3kiNaglFWrRn8OpMrGULICPaEcVvgpxUWvv0gn&_nc_ohc=auvuDrYJm2MQ7kNvgGAolrR&_nc_ht=scontent.fhan2-5.fna&oh=00_AYDgiMUWa3cPHWzXJ47seM9yEBCtvIw42coUJxC9gaciQg&oe=668ED914" alt="profile image"> --}}
                        @endif
                        <div class="dot-indicator bg-success"></div>
                    </div>
